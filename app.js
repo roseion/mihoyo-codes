@@ -1,6 +1,13 @@
 // 前端逻辑：拉取 /api/data，渲染兑换码与线下活动卡片
 const $ = (s) => document.querySelector(s);
 
+// Railway 后端地址（GitHub Pages 部署时需要跨域调用；Railway 自身部署时用相对路径）
+const RAILWAY_API = 'https://mihoyo-codes-production.up.railway.app';
+
+// 是否在 Railway 上（相对路径可用）
+const isRailway = location.hostname.includes('railway.app');
+const API_BASE = isRailway ? '' : RAILWAY_API;
+
 const GAME_LOGO = { genshin: '原', sr: '星', zzz: '零' };
 
 const state = { data: null };
@@ -147,7 +154,7 @@ async function loadData() {
   let data = window.__SEED__ || null;
   let source = 'seed';
   try {
-    const res = await fetch('/api/data', { cache: 'no-store' });
+    const res = await fetch(API_BASE + '/api/data', { cache: 'no-store' });
     if (res.ok) {
       const live = await res.json();
       if (live && live.games && Object.keys(live.games).length) {
@@ -175,7 +182,7 @@ async function manualUpdate() {
   label.textContent = '更新中';
   spin.hidden = false;
   try {
-    const res = await fetch('/api/update', { method: 'POST' });
+    const res = await fetch(API_BASE + '/api/update', { method: 'POST' });
     const json = await res.json();
     if (json.ok) {
       await loadData();
