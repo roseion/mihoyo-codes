@@ -76,7 +76,7 @@ body {
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
-  min-height: 78vh;
+  min-height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,17 +87,16 @@ body {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background-image: url("assets/genshin.jpg");
-  background-size: cover;
+  background-image: url("assets/hero.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   filter: saturate(1.05);
-  transform: scale(1.05);
-  animation: heroZoom 18s ease-in-out infinite alternate;
 }
 .hero-bg::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.55) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.38) 45%, rgba(0,0,0,0.72) 100%);
 }
 @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
 
@@ -110,8 +109,9 @@ body {
   font-size: clamp(34px, 7vw, 64px);
   font-weight: 700; line-height: 1.05; margin: 0 0 14px;
   letter-spacing: -0.5px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
 }
-.hero-sub { font-size: clamp(16px, 2.5vw, 21px); opacity: 0.95; margin: 0 0 26px; }
+.hero-sub { font-size: clamp(16px, 2.5vw, 21px); opacity: 0.95; margin: 0 0 26px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
 .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .pill {
   display: inline-block; text-decoration: none;
@@ -250,6 +250,86 @@ body {
   text-shadow: 0 1px 4px rgba(0,0,0,0.75);
 }
 .event-more::after { content: " →"; }
+
+/* ---------- 活动卡片：同色系渐变玻璃卡（深色文字，保证可读性） ---------- */
+.event-card {
+  background: var(--event-bg, #1b3a6b); /* 兜底纯色 */
+  background:
+    radial-gradient(130% 130% at 12% 8%, rgba(255,255,255,0.55), rgba(255,255,255,0) 52%),
+    linear-gradient(155deg,
+      color-mix(in srgb, var(--event-bg) 76%, #ffffff) 0%,
+      var(--event-bg) 58%,
+      color-mix(in srgb, var(--event-bg) 86%, #000000) 100%);
+  border-radius: var(--radius);
+  padding: 20px 22px 22px;
+  color: #1d1d1f;
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 200px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+.event-card:hover { box-shadow: 0 16px 42px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.65); transform: translateY(-4px); }
+
+.event-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.event-card-logo {
+  width: 34px; height: 34px; border-radius: 10px;
+  background: rgba(0,0,0,0.07);
+  border: 1px solid rgba(0,0,0,0.1);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; color: #1d1d1f;
+}
+.event-card-game { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #45454d; }
+
+.event-card .event-item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,0.38);
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 0 0 10px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.event-card .event-item:hover { background: rgba(255,255,255,0.6); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+.event-card .event-item:last-child { margin-bottom: 0; }
+.event-card .event-title {
+  color: #1d1d1f;
+  text-shadow: none;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+.event-card .event-tags { margin-bottom: 10px; }
+.event-card .tag {
+  background: rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #1d1d1f;
+  text-shadow: none;
+}
+.event-card .tag.time { background: rgba(0, 0, 0, 0.14); }
+.event-card .event-summary {
+  color: #45454d;
+  text-shadow: none;
+  margin: 0 0 10px;
+  line-height: 1.6;
+}
+.event-card .event-more {
+  color: #5a5a63;
+  text-shadow: none;
+  margin-top: auto;
+}
+.event-card .card-empty {
+  color: #45454d;
+  background: rgba(0, 0, 0, 0.06);
+  text-shadow: none;
+  text-align: left;
+  margin: 0;
+}
 
 /* ---------- Toast ---------- */
 .toast {
