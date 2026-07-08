@@ -70,6 +70,8 @@ function renderCodes(game) {
 
 function renderEvents(game) {
   const events = game.events || [];
+  const t = game.theme || {};
+  const bg = t.primary || '#1b3a6b';
   let body;
   if (!events.length) {
     body = `<div class="card-empty">近一个月内暂无新的线下活动公布</div>`;
@@ -91,7 +93,13 @@ function renderEvents(game) {
       })
       .join('');
   }
-  return cardShell(game, body);
+  // 活动卡片：同色系渐变玻璃卡，深色文字保证可读性
+  const head = `
+    <div class="event-card-head">
+      <span class="event-card-logo">${GAME_LOGO[game.slug] || '·'}</span>
+      <span class="event-card-game">${escapeHtml(game.name)} · 线下活动</span>
+    </div>`;
+  return `<article class="event-card" style="--event-bg:${bg}">${head}${body}</article>`;
 }
 
 function render() {
