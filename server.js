@@ -232,6 +232,14 @@ function serveApi(res, status, obj) {
 const server = http.createServer(async (req, res) => {
   const u = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(u.pathname);
+  
+  // 健康检查（Railway HTTP 代理需要快速响应）
+  if (pathname === '/up' || pathname === '/health') {
+    addCors(res);
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('ok');
+    return;
+  }
 
   // CORS 预检
   if (req.method === 'OPTIONS') {
