@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>米哈游福利站 · 兑换码 & 线下活动</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">米哈游 · 福利站</div>
+      <div class="nav-actions">
+        <span class="nav-updated" id="navUpdated">加载中…</span>
+        <button class="btn-update" id="updateBtn" aria-label="手动更新">
+          <span class="spinner" id="spinner" hidden></span>
+          <span id="updateLabel">更新</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">国服可用 · 一周内发布</p>
+      <h1 class="hero-title">原神 · 星穹铁道 · 绝区零</h1>
+      <p class="hero-sub">随时更新兑换码与官方线下活动，一页尽览。</p>
+      <div class="hero-cta">
+        <a href="#codes" class="pill pill-light">查看兑换码</a>
+        <a href="#events" class="pill pill-ghost">线下活动</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">⌄</div>
+  </section>
+
+  <main class="wrap">
+    <!-- 兑换码 -->
+    <section id="codes" class="section">
+      <div class="section-head">
+        <h2 class="section-title">兑换码</h2>
+        <p class="section-desc">优先展示一周内发布、国服可用的兑换码。若近期无新码，则回退展示最近一条存档并标注发布时间。</p>
+      </div>
+      <div class="game-grid" id="codeGrid"><!-- JS 渲染 --></div>
+    </section>
+
+    <!-- 线下活动 -->
+    <section id="events" class="section">
+      <div class="section-head">
+        <h2 class="section-title">线下活动</h2>
+        <p class="section-desc">官方近一个月内公布的线下活动，含发布时间与活动时间，点击卡片查看原文。</p>
+      </div>
+      <div class="game-grid" id="eventGrid"><!-- JS 渲染 --></div>
+    </section>
+
+    <footer class="foot">
+      <p>数据来源：米游社官方动态、公开媒体报道。兑换码时效极短，请以游戏内实际兑换结果为准。</p>
+      <p class="foot-dim">本页面为个人整理工具，与米哈游官方无隶属关系。</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" hidden></div>
+
+<script>
+window.__SEED__ = {
+  "meta": {
+    "updatedAt": "2026-07-08T16:14:00+08:00",
+    "mode": "seed",
+    "note": "种子数据：线下活动来自联网检索到的官方/媒体公开报道（已在原文链接标注）；兑换码时效极短，本页自动从米游社抓取，抓取失败时保留上次有效内容。近一周若无新码，则回退展示最近一条存档并标注发布时间。"
+  },
+  "games": {
+    "genshin": {
+      "name": "原神",
+      "slug": "genshin",
+      "tagline": "七国之旅 · 提瓦特大陆",
+      "theme": {
+        "primary": "#74c0fc",
+        "accent": "#ffd166",
+        "gradient": "linear-gradient(135deg, #0b1d3a 0%, #1b3a6b 55%, #2a5b9e 100%)",
+        "bgImage": "assets/genshin.jpg"
+      },
+      "codes": [],
+      "events": [
+        {
+          "title": "原神「湖光入画」全国唯一主题快闪",
+          "published": "2026-07-03",
+          "publishedTs": 1751472000000,
+          "eventStart": "2026-07-01",
+          "eventEnd": "2026-07-31",
+          "location": "上海 · 南京东路新世界城",
+          "summary": "原神「湖光入画」全国唯一主题快闪限时落地新世界城，沉浸式感受提瓦特大陆夏日风情，现场打卡、选购系列限定周边。",
+          "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2386a477c4585252",
+          "source": "腾讯新闻"
+        },
+        {
+          "title": "脆脆鲨 × 原神联名快闪【脆脆鲨乐园】@ BilibiliWorld 2026",
+          "published": "2026-07-06",
+          "publishedTs": 1751731200000,
+          "eventStart": "2026-07-10",
+          "eventEnd": "2026-07-12",
+          "location": "上海 · 国家会展中心 6.1H馆 6A14（BilibiliWorld 2026）",
+          "summary": "脆脆鲨×原神联名快闪【脆脆鲨乐园】空降 BilibiliWorld 2026，首个品牌和 IP 双展台联动，参与互动可获得联动贴纸与惊喜限量无料。",
+          "url": "https://weibo.com/u/3785579782",
+          "source": "微博 @原神"
+        }
+      ]
+    },
+    "sr": {
+      "name": "崩坏：星穹铁道",
+      "slug": "sr",
+      "tagline": "星穹列车 · 开拓星海",
+      "theme": {
+        "primary": "#b388ff",
+        "accent": "#5ad1ff",
+        "gradient": "linear-gradient(135deg, #2b1055 0%, #4b2a8a 50%, #7597de 100%)",
+        "bgImage": "assets/sr.jpg"
+      },
+      "codes": [],
+      "events": [
+        {
+          "title": "崩坏：星穹铁道 参展 BilibiliWorld 2026",
+          "published": "2026-06-24",
+          "publishedTs": 1750694400000,
+          "eventStart": "2026-07-10",
+          "eventEnd": "2026-07-12",
+          "location": "上海 · 国家会展中心",
+          "summary": "米游社官方公布参展 BilibiliWorld 2026，展会时间 2026 年 7 月 10 日–7 月 12 日，展馆地址上海国家会展中心，现场体验最新版本内容。",
+          "url": "https://www.miyoushe.com/sr/",
+          "source": "米游社官方"
+        }
+      ]
+    },
+    "zzz": {
+      "name": "绝区零",
+      "slug": "zzz",
+      "tagline": "新艾利都 · 空洞都市",
+      "theme": {
+        "primary": "#ff3d7f",
+        "accent": "#21e6c1",
+        "gradient": "linear-gradient(135deg, #1a0b2e 0%, #6a1247 50%, #ff2e63 100%)",
+        "bgImage": "assets/zzz.jpg"
+      },
+      "codes": [
+        {
+          "code": "PULUOMIYA0506",
+          "reward": "菲林（2.8 前瞻特别节目兑换码）",
+          "published": "2026-05-04",
+          "source": "绝区零 2.8 前瞻特别节目",
+          "note": "历史存档 · 前瞻码时效极短，可能已失效，仅供参照",
+          "reliable": false
+        }
+      ],
+      "events": [
+        {
+          "title": "绝区零 参展 BilibiliWorld 2026",
+          "published": "2026-07-06",
+          "publishedTs": 1751731200000,
+          "eventStart": "2026-07-10",
+          "eventEnd": "2026-07-12",
+          "location": "上海 · 国家会展中心",
+          "summary": "绝区零确认参展 BilibiliWorld 2026（7/10–7/12，国家会展中心），以集装箱造型展位立体还原「新艾利都」都市美学，沉浸式解锁次元大作。",
+          "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_0596a4b080e94552",
+          "source": "2026 下半年全国漫展整理"
+        }
+      ]
+    }
+  }
+};
+</script>
+  <script src="app.js"></script>
+</body>
+</html>
