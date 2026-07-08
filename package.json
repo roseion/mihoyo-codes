@@ -1,0 +1,13 @@
+{
+  "name": "mihoyo-codes",
+  "version": "1.0.0",
+  "description": "原神/星穹铁道/绝区零 兑换码与活动信息展示",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
