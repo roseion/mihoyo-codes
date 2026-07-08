@@ -197,12 +197,30 @@ function sendFile(res, filePath) {
       return;
     }
     const ext = path.extname(filePath).toLowerCase();
+    addCors(res);
     res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
     res.end(buf);
   });
 }
 
+const RAILWAY_URL = 'https://mihoyo-codes-production.up.railway.app';
+const ALLOWED_ORIGINS = [
+  RAILWAY_URL,
+  'https://mihoyo.oldgao.com',
+  'https://roseion.github.io',
+  'http://localhost:' + PORT,
+];
+
+function addCors(res) {
+  const origin = res.req.headers.origin || '';
+  const allowed = ALLOWED_ORIGINS.some((o) => origin.includes(new URL(o).host));
+  res.setHeader('Access-Control-Allow-Origin', allowed ? origin : ALLOWED_ORIGINS[0]);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+}
+
 function serveApi(res, status, obj) {
+  addCors(res);
   const body = JSON.stringify(obj);
   res.writeHead(status, {
     'Content-Type': 'application/json; charset=utf-8',
@@ -214,6 +232,13 @@ function serveApi(res, status, obj) {
 const server = http.createServer(async (req, res) => {
   const u = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(u.pathname);
+
+  // CORS 预检
+  if (req.method === 'OPTIONS') {
+    addCors(res);
+    res.writeHead(204);
+    return res.end();
+  }
 
   // API: 取数据
   if (pathname === '/api/data' && req.method === 'GET') {
