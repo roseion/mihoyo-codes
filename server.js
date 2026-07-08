@@ -268,7 +268,7 @@ const server = http.createServer(async (req, res) => {
   sendFile(res, filePath);
 });
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`米哈游活动/兑换码 H5 已启动： http://localhost:${PORT}`);
   // 启动即执行一次自动更新尝试
   doUpdate().then((m) =>
