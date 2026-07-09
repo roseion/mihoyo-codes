@@ -44,36 +44,7 @@
           "status": "upcoming"
         }
       ],
-      "collabs": [
-        {
-          "title": "原神 × 喜茶 联动",
-          "partner": "喜茶",
-          "type": "餐饮",
-          "published": "2026-07-01",
-          "publishedTs": 1751308800000,
-          "start": "2026-07-05",
-          "end": "2026-07-31",
-          "reward": "联动饮品 + 限定周边贴纸",
-          "summary": "购买联动饮品「风起之茶」获赠游戏内风起之茶同款贴纸，部分门店设有原神主题装饰打卡点。",
-          "url": "https://weibo.com/u/3785579782",
-          "source": "微博 @原神",
-          "status": "ongoing"
-        },
-        {
-          "title": "原神 × 必胜客 联动",
-          "partner": "必胜客",
-          "type": "餐饮",
-          "published": "2026-06-25",
-          "publishedTs": 1750800000000,
-          "start": "2026-06-28",
-          "end": "2026-07-20",
-          "reward": "联动套餐 + 游戏内兑换码（菲林×10）",
-          "summary": "必胜客全国门店推出原神联动套餐，购买即赠游戏内兑换码。",
-          "url": "https://weibo.com/u/3785579782",
-          "source": "微博 @原神",
-          "status": "ongoing"
-        }
-      ]
+      "collabs": []
     },
     "sr": {
       "name": "崩坏：星穹铁道",
@@ -214,22 +185,7 @@
       },
       "codes": [],
       "events": [],
-      "collabs": [
-        {
-          "title": "明日方舟：终末地 × 悠航鲜酿 联动",
-          "partner": "悠航鲜酿",
-          "type": "餐饮",
-          "published": "2026-07-02",
-          "publishedTs": 1751395200000,
-          "start": "2026-07-05",
-          "end": "2026-08-05",
-          "reward": "限定精酿啤酒 + 森空岛积分",
-          "summary": "终末地 × 悠航联名精酿「废土艾尔」上线，购买即赠森空岛积分与限定周边。",
-          "url": "https://www.skland.com/game/endfield",
-          "source": "森空岛官方",
-          "status": "ongoing"
-        }
-      ]
+      "collabs": []
     },
     "yuhuan": {
       "name": "异环",
