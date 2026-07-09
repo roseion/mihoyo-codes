@@ -1,14 +1,16 @@
 {
   "meta": {
-    "updatedAt": "2026-07-09T13:54:00+08:00",
-    "mode": "scraped",
-    "note": "线下活动数据来自米游社原神/星穹铁道/绝区零版块搜索'线下活动'关键词（2026-07-09抓取）。仅显示正在进行或即将开始的活动。兑换码时效极短，本页自动从米游社抓取，抓取失败时保留上次有效内容。近一周若无新码，则回退展示最近一条存档并标注发布时间。"
+    "updatedAt": "2026-07-09T15:14:00+08:00",
+    "mode": "seed",
+    "note": "二次元游戏兑换码汇总页面。收录鸣潮、明日方舟：终末地、异环等新游戏。兑换码时效极短，本页数据仅供参考，请以游戏内实际兑换结果为准。"
   },
   "games": {
     "genshin": {
       "name": "原神",
       "slug": "genshin",
       "tagline": "七国之旅 · 提瓦特大陆",
+      "community": "米游社",
+      "communityUrl": "https://www.miyoushe.com/ys/",
       "theme": {
         "primary": "#74c0fc",
         "accent": "#ffd166",
@@ -47,6 +49,8 @@
       "name": "崩坏：星穹铁道",
       "slug": "sr",
       "tagline": "星穹列车 · 开拓星海",
+      "community": "米游社",
+      "communityUrl": "https://www.miyoushe.com/sr/",
       "theme": {
         "primary": "#b388ff",
         "accent": "#5ad1ff",
@@ -85,6 +89,8 @@
       "name": "绝区零",
       "slug": "zzz",
       "tagline": "新艾利都 · 空洞都市",
+      "community": "米游社",
+      "communityUrl": "https://www.miyoushe.com/zzz/",
       "theme": {
         "primary": "#ff3d7f",
         "accent": "#21e6c1",
@@ -115,6 +121,51 @@
           "status": "upcoming"
         }
       ]
+    },
+    "wuwa": {
+      "name": "鸣潮",
+      "slug": "wuwa",
+      "tagline": "开放世界 · 动作冒险",
+      "community": "库街区",
+      "communityUrl": "https://www.kurobbs.com/mc/home/9",
+      "theme": {
+        "primary": "#ff8c00",
+        "accent": "#ffd700",
+        "gradient": "linear-gradient(135deg, #1a1a1a 0%, #2d2d1a 50%, #4a4a2a 100%)",
+        "bgImage": "assets/wuwa.jpg"
+      },
+      "codes": [],
+      "events": []
+    },
+    "endfield": {
+      "name": "明日方舟：终末地",
+      "slug": "endfield",
+      "tagline": "工业废墟 · 末日生存",
+      "community": "森空岛",
+      "communityUrl": "https://www.skland.com/game/endfield?cateId=12",
+      "theme": {
+        "primary": "#5a6a7a",
+        "accent": "#c0c8d0",
+        "gradient": "linear-gradient(135deg, #0a0a0a 0%, #1a2a3a 50%, #2a4a5a 100%)",
+        "bgImage": "assets/endfield.jpg"
+      },
+      "codes": [],
+      "events": []
+    },
+    "yuhuan": {
+      "name": "异环",
+      "slug": "yuhuan",
+      "tagline": "都市异闻 · 超自然冒险",
+      "community": "TapTap",
+      "communityUrl": "https://www.taptap.cn/forum/g805079",
+      "theme": {
+        "primary": "#9b59b6",
+        "accent": "#e91e63",
+        "gradient": "linear-gradient(135deg, #1a0a1a 0%, #2a1a3a 50%, #4a2a5a 100%)",
+        "bgImage": "assets/yuhuan.jpg"
+      },
+      "codes": [],
+      "events": []
     }
   }
 }
