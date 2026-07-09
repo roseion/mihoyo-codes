@@ -8,7 +8,7 @@ const RAILWAY_API = 'https://mihoyo-codes-production.up.railway.app';
 const isRailway = location.hostname.includes('railway.app');
 const API_BASE = isRailway ? '' : RAILWAY_API;
 
-const GAME_LOGO = { genshin: '原', sr: '星', zzz: '零' };
+const GAME_LOGO = { genshin: '原', sr: '星', zzz: '零', wuwa: '鸣', endfield: '方', yuhuan: '异' };
 
 const state = { data: null };
 
