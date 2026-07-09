@@ -73,59 +73,87 @@ body {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ---------- Hero ---------- */
+/* ---------- Hero（PlayStation 设计语言） ---------- */
 .hero {
   position: relative;
-  min-height: 40vh;
+  min-height: 28vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #fff;
   overflow: hidden;
-  background: radial-gradient(circle at 30% 20%, #2a5b9e, #0b1d3a 70%);
+  /* PlayStation Blue 全幅画布 */
+  background: #0070d1;
 }
 .hero-bg {
-  position: absolute; inset: 0;
-  background-image: url("assets/hero.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: saturate(1.05);
+  display: none;
 }
-.hero-bg::after {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.38) 45%, rgba(0,0,0,0.72) 100%);
-}
-@keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
 
-.hero-content { position: relative; z-index: 2; padding: 0 22px; max-width: 760px; }
+.hero-content {
+  position: relative; z-index: 2;
+  padding: 48px 28px;
+  max-width: 860px;
+  background: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+}
+
+/* eyebrow：badge-info 蓝色胶囊 */
 .hero-eyebrow {
-  font-size: 15px; font-weight: 600; letter-spacing: 1px;
-  text-transform: uppercase; opacity: 0.92; margin: 0 0 8px;
+  display: inline-block;
+  margin: 0 0 16px;
+  background: #0070d1; /* PlayStation Blue */
+  color: #ffffff;
+  font: 500 12px/1 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 6px 13px;
+  border-radius: 9999px;
 }
+
+/* 大标题：SST 招牌细体（weight 300），airy 编辑感 */
 .hero-title {
-  font-size: clamp(34px, 7vw, 64px);
-  font-weight: 700; line-height: 1.05; margin: 0 0 14px;
-  letter-spacing: -0.5px;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.55);
+  font-family: "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: clamp(38px, 7vw, 60px);
+  font-weight: 300; line-height: 1.25; margin: 0 0 16px;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.5);
 }
-.hero-sub { font-size: clamp(16px, 2.5vw, 21px); opacity: 0.95; margin: 0 0 26px; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
+.hero-sub {
+  font: 400 17px/1.5 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: rgba(255,255,255,0.7); margin: 0 0 30px;
+}
+
+/* CTA：全圆角胶囊；蓝色=主操作，描边=次级（flat，无投影） */
 .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .pill {
-  display: inline-block; text-decoration: none;
-  padding: 12px 26px; border-radius: 980px; font-size: 16px; font-weight: 500;
-  transition: transform 0.15s ease, opacity 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  min-height: 48px; padding: 13px 30px; border-radius: 9999px;
+  font: 700 15px/1 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.45px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.12s ease;
 }
-.pill:hover { opacity: 0.9; transform: translateY(-1px); }
-.pill-light { background: #fff; color: #0071e3; }
-.pill-ghost { background: rgba(255,255,255,0.16); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.pill:hover { transform: translateY(-1px); }
+.pill:active { transform: translateY(1px); }
+.pill-light { background: #0070d1; color: #fff; }                          /* PlayStation Blue 主操作 */
+.pill-light:hover { background: #0064b7; }                                 /* pressed */
+.pill-ghost { background: transparent; color: #fff; border-color: rgba(229,229,229,0.2); } /* 次级描边 */
+.pill-ghost:hover { background: rgba(255,255,255,0.1); }
 
+/* 滚动提示：carousel-paddle 半透明圆 */
 .hero-scroll {
-  position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
-  font-size: 26px; z-index: 2; animation: bob 2s ease-in-out infinite;
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  width: 48px; height: 48px; border-radius: 9999px;
+  background: rgba(255,255,255,0.16); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; z-index: 2;
+  transition: background 0.15s ease;
 }
+.hero-scroll:hover { background: rgba(255,255,255,0.28); }
 @keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
 /* ---------- 布局 ---------- */
@@ -141,10 +169,10 @@ body {
   gap: 22px;
 }
 
-/* ---------- 卡片（Apple product card 风） ---------- */
+/* ---------- 卡片（PlayStation game-tile 风格） ---------- */
 .card {
   position: relative;
-  border-radius: var(--radius);
+  border-radius: 8px; /* rounded.md */
   overflow: hidden;
   min-height: 420px;
   display: flex;
@@ -152,74 +180,89 @@ body {
   justify-content: flex-end;
   color: #fff;
   background: var(--card-grad, #1b3a6b);
-  box-shadow: var(--shadow);
+  box-shadow: none; /* 扁平无投影 */
   isolation: isolate;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.card:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,0,0,0.2); }
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16); /* soft active shadow */
+}
 
 .card-bg {
   position: absolute; inset: 0;
   z-index: 0;
-  background-color: var(--card-grad, #1b3a6b); /* 永远有底色兜底 */
+  background-color: var(--card-grad, #1b3a6b);
   background-image: var(--card-bg-image, none);
   background-size: cover;
   background-position: center;
   transition: transform 0.4s ease;
 }
-.card:hover .card-bg { transform: scale(1.04); }
+.card:hover .card-bg { transform: scale(1.02); }
 .card-bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.62) 40%, rgba(0,0,0,0.93) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.92) 100%);
 }
 
+/* 游戏Logo圆标 */
 .card-logo {
-  position: absolute; top: 22px; left: 22px; z-index: 1;
-  width: 46px; height: 46px; border-radius: 12px;
-  background: rgba(0,0,0,0.5); backdrop-filter: blur(8px);
+  position: absolute; top: 16px; left: 16px; z-index: 1;
+  width: 40px; height: 40px; border-radius: 9999px; /* full */
+  background: rgba(0,0,0,0.6);
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 18px; border: 1px solid rgba(255,255,255,0.3);
-}
-.card-body { position: relative; z-index: 1; padding: 24px; }
-.card-game {
-  font-size: 13px; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; margin: 0 0 4px;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
-}
-.card-tagline {
-  font-size: 13px; opacity: 0.9; margin: 0 0 16px;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+  font-weight: 700; font-size: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* 兑换码块 */
+.card-body { position: relative; z-index: 1; padding: 20px; }
+
+/* 游戏名：细体 + 大写追踪 */
+.card-game {
+  font-family: "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 13px; font-weight: 600; letter-spacing: 1px;
+  text-transform: uppercase; margin: 0 0 4px;
+  color: #fff;
+}
+
+/* tagline：body-dark 灰 */
+.card-tagline {
+  font: 400 14px/1.5 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: rgba(255,255,255,0.7); margin: 0 0 16px;
+}
+
+/* 兑换码块：内嵌面板 */
 .code-row {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.22);
-  border-radius: 14px; padding: 10px 12px; margin-bottom: 8px;
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 10px 12px; margin-bottom: 8px;
 }
 .code-val {
-  font-family: "SF Mono", ui-monospace, Menlo, monospace;
-  font-size: 14px; font-weight: 600; letter-spacing: 0.5px;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.85);
+  font-family: "Roboto Mono", "SF Mono", ui-monospace, Menlo, monospace;
+  font-size: 14px; font-weight: 500; letter-spacing: 0.5px;
+  color: #fff;
 }
+/* 复制按钮：全圆角胶囊 */
 .code-copy {
-  border: none; background: rgba(255,255,255,0.9); color: #111;
-  font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 980px; cursor: pointer;
-  white-space: nowrap; transition: background 0.15s ease;
+  border: none; background: #0070d1; color: #fff;
+  font: 700 12px/1 "Roboto", "Inter", Arial, sans-serif;
+  padding: 6px 14px; border-radius: 9999px; cursor: pointer;
+  white-space: nowrap; transition: background 0.15s ease, transform 0.12s ease;
 }
-.code-copy:active { background: #fff; }
+.code-copy:hover { background: #0064b7; }
+.code-copy:active { transform: scale(0.96); }
+
 .code-meta {
-  font-size: 11px; opacity: 0.9; margin: 2px 0 12px; line-height: 1.4;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.75);
+  font: 400 12px/1.5 "Roboto", "Inter", Arial, sans-serif;
+  color: rgba(255,255,255,0.6); margin: 2px 0 12px;
 }
-.code-meta .warn { color: #ffd56b; }
+.code-meta .warn { color: #53b1ff; } /* link-dark 蓝 */
 
 .card-empty {
-  font-size: 14px; opacity: 0.95;
-  background: rgba(0,0,0,0.45); border-radius: 12px; padding: 14px; text-align: center;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.75);
+  font: 400 14px/1.5 "Roboto", "Inter", Arial, sans-serif;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06); border-radius: 8px; padding: 14px; text-align: center;
 }
 
 /* 活动列表 */
@@ -251,84 +294,137 @@ body {
 }
 .event-more::after { content: " →"; }
 
-/* ---------- 活动卡片：同色系渐变玻璃卡（深色文字，保证可读性） ---------- */
+/* ---------- 线下活动（PlayStation 设计语言） ---------- */
+
+/* 区块标题：浅色画布，细体大标题 + 发丝分割线（无装饰） */
+#events .section-head {
+  background: transparent;
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 24px;
+  text-align: left;
+  border-bottom: 1px solid #f3f3f3; /* hairline-light */
+}
+#events .section-title {
+  color: #000000; /* ink */
+  text-transform: none;
+  letter-spacing: 0.1px;
+  font: 300 clamp(28px, 4vw, 40px)/1.2 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  margin: 0 0 8px;
+  text-shadow: none;
+}
+#events .section-desc {
+  color: rgba(0,0,0,0.6); /* body-light */
+  font: 400 16px/1.5 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  max-width: 720px;
+  margin: 0;
+}
+
+/* 活动卡片：深色 game-tile（surface-dark-card），8px 圆角，无静止投影 */
 .event-card {
-  background: var(--event-bg, #1b3a6b); /* 兜底纯色 */
-  background:
-    radial-gradient(130% 130% at 12% 8%, rgba(255,255,255,0.55), rgba(255,255,255,0) 52%),
-    linear-gradient(155deg,
-      color-mix(in srgb, var(--event-bg) 76%, #ffffff) 0%,
-      var(--event-bg) 58%,
-      color-mix(in srgb, var(--event-bg) 86%, #000000) 100%);
-  border-radius: var(--radius);
-  padding: 20px 22px 22px;
-  color: #1d1d1f;
-  border: 1px solid rgba(255,255,255,0.7);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.55);
+  position: relative;
+  background: #181818; /* surface-dark-card */
+  color: #fff;
+  border: 1px solid rgba(229,229,229,0.12);
+  border-radius: 8px; /* rounded.md */
+  box-shadow: none;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   min-height: 200px;
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.event-card:hover { box-shadow: 0 16px 42px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.65); transform: translateY(-4px); }
+/* 顶部品牌色条（游戏身份标识） */
+.event-card::before {
+  content: "";
+  display: block;
+  height: 4px;
+  background: var(--event-bg, #1b3a6b);
+}
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16); /* 仅抬升时出现（soft active shadow） */
+}
 
-.event-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+/* 卡片头 */
+.event-card-head {
+  display: flex; align-items: center; gap: 10px;
+  background: #121314; /* surface-dark-elevated */
+  padding: 13px 16px;
+  margin: 0;
+  border-bottom: 1px solid rgba(229,229,229,0.12);
+}
 .event-card-logo {
-  width: 34px; height: 34px; border-radius: 10px;
-  background: rgba(0,0,0,0.07);
-  border: 1px solid rgba(0,0,0,0.1);
+  width: 32px; height: 32px; border-radius: 9999px;
+  background: var(--event-bg, #1b3a6b);
+  border: 1px solid rgba(255,255,255,0.25);
   display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 15px; color: #1d1d1f;
+  font-weight: 700; font-size: 15px; color: #fff;
 }
-.event-card-game { font-size: 13px; font-weight: 700; letter-spacing: 0.5px; color: #45454d; }
+.event-card-game {
+  font: 600 13px/1.2 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0; color: #fff;
+}
 
+/* 活动条目：surface-dark-elevated 内嵌面板（8px 圆角，扁平） */
 .event-card .event-item {
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
   text-decoration: none;
-  color: inherit;
-  background: rgba(255,255,255,0.38);
-  border: 1px solid rgba(255,255,255,0.55);
-  border-radius: 12px;
-  padding: 12px 14px;
-  margin: 0 0 10px;
-  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  color: #fff;
+  background: #121314;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 15px;
+  margin: 12px;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
-.event-card .event-item:hover { background: rgba(255,255,255,0.6); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
-.event-card .event-item:last-child { margin-bottom: 0; }
+.event-card .event-item:last-child { margin-bottom: 12px; }
+.event-card .event-item:hover { background: #20222a; transform: translateY(-1px); }
 .event-card .event-title {
-  color: #1d1d1f;
-  text-shadow: none;
+  color: #fff;
   margin: 0 0 10px;
-  line-height: 1.4;
+  font: 600 15px/1.4 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
-.event-card .event-tags { margin-bottom: 10px; }
+.event-card .event-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+/* 标签：badge-info 蓝色胶囊 */
 .event-card .tag {
-  background: rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  color: #1d1d1f;
+  background: #0070d1; /* PlayStation Blue */
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  font: 500 12px/1 "Roboto", "Inter", Arial, "PingFang SC", sans-serif;
+  letter-spacing: 0.3px;
+  padding: 4px 10px;
   text-shadow: none;
 }
-.event-card .tag.time { background: rgba(0, 0, 0, 0.14); }
+/* 时间标签：中性灰，低调 */
+.event-card .tag.time { background: rgba(255,255,255,0.08); color: #cccccc; }
 .event-card .event-summary {
-  color: #45454d;
-  text-shadow: none;
+  color: rgba(255,255,255,0.7); /* body-dark */
   margin: 0 0 10px;
-  line-height: 1.6;
+  font: 400 14px/1.6 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  text-shadow: none;
 }
+/* 前进线索：link-dark 蓝 + chevron */
 .event-card .event-more {
-  color: #5a5a63;
+  color: #53b1ff; /* link-dark */
+  font: 700 13px/1 "Roboto", "Inter", Arial, "PingFang SC", sans-serif;
+  letter-spacing: 0.3px;
   text-shadow: none;
   margin-top: auto;
 }
+.event-card .event-more::after { content: " \2192"; font-weight: 700; }
 .event-card .card-empty {
-  color: #45454d;
-  background: rgba(0, 0, 0, 0.06);
-  text-shadow: none;
+  color: #cccccc;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
   text-align: left;
-  margin: 0;
+  margin: 12px;
+  padding: 14px;
 }
 
 /* ---------- Toast ---------- */
