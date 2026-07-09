@@ -23,7 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- 导航 ---------- */
+/* ---------- 瀵艰埅 ---------- */
 .nav {
   position: sticky;
   top: 0;
@@ -73,7 +73,7 @@ body {
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ---------- Hero（PlayStation 设计语言） ---------- */
+/* ---------- Hero锛圥layStation 璁捐璇█锛?---------- */
 .hero {
   position: relative;
   min-height: 28vh;
@@ -83,8 +83,15 @@ body {
   text-align: center;
   color: #fff;
   overflow: hidden;
-  /* PlayStation Blue 全幅画布 */
-  background: #0070d1;
+  /* 钃濆ぉ鐧戒簯鑽夊湴鑺辫儗鏅浘 */
+  background: url('assets/hero-bg.jpg') center/cover no-repeat;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 .hero-bg {
   display: none;
@@ -99,7 +106,7 @@ body {
   backdrop-filter: none;
 }
 
-/* eyebrow：badge-info 蓝色胶囊 */
+/* eyebrow锛歜adge-info 钃濊壊鑳跺泭 */
 .hero-eyebrow {
   display: inline-block;
   margin: 0 0 16px;
@@ -112,11 +119,11 @@ body {
   border-radius: 9999px;
 }
 
-/* 大标题：SST 招牌细体（weight 300），airy 编辑感 */
+/* 澶ф爣棰橈細SST 鎷涚墝缁嗕綋锛坵eight 300锛夛紝airy 缂栬緫鎰?*/
 .hero-title {
   font-family: "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: clamp(38px, 7vw, 60px);
-  font-weight: 300; line-height: 1.25; margin: 0 0 16px;
+  font-size: clamp(44px, 8vw, 72px);
+  font-weight: 700; line-height: 1.2; margin: 0 0 16px;
   letter-spacing: 0.1px;
   color: #ffffff;
   text-shadow: 0 1px 12px rgba(0,0,0,0.5);
@@ -126,7 +133,7 @@ body {
   color: rgba(255,255,255,0.7); margin: 0 0 30px;
 }
 
-/* CTA：全圆角胶囊；蓝色=主操作，描边=次级（flat，无投影） */
+/* CTA锛氬叏鍦嗚鑳跺泭锛涜摑鑹?涓绘搷浣滐紝鎻忚竟=娆＄骇锛坒lat锛屾棤鎶曞奖锛?*/
 .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .pill {
   display: inline-flex; align-items: center; justify-content: center;
@@ -139,12 +146,12 @@ body {
 }
 .pill:hover { transform: translateY(-1px); }
 .pill:active { transform: translateY(1px); }
-.pill-light { background: #0070d1; color: #fff; }                          /* PlayStation Blue 主操作 */
+.pill-light { background: #0070d1; color: #fff; }                          /* PlayStation Blue 涓绘搷浣?*/
 .pill-light:hover { background: #0064b7; }                                 /* pressed */
-.pill-ghost { background: transparent; color: #fff; border-color: rgba(229,229,229,0.2); } /* 次级描边 */
+.pill-ghost { background: transparent; color: #fff; border-color: rgba(229,229,229,0.2); } /* 娆＄骇鎻忚竟 */
 .pill-ghost:hover { background: rgba(255,255,255,0.1); }
 
-/* 滚动提示：carousel-paddle 半透明圆 */
+/* 婊氬姩鎻愮ず锛歝arousel-paddle 鍗婇€忔槑鍦?*/
 .hero-scroll {
   position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
   width: 48px; height: 48px; border-radius: 9999px;
@@ -156,7 +163,7 @@ body {
 .hero-scroll:hover { background: rgba(255,255,255,0.28); }
 @keyframes bob { 0%,100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, 8px); } }
 
-/* ---------- 布局 ---------- */
+/* ---------- 甯冨眬 ---------- */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px 60px; }
 .section { padding: 64px 0 24px; }
 .section-head { text-align: center; margin-bottom: 36px; }
@@ -169,7 +176,7 @@ body {
   gap: 22px;
 }
 
-/* ---------- 卡片（PlayStation game-tile 风格） ---------- */
+/* ---------- 鍗＄墖锛圥layStation game-tile 椋庢牸锛?---------- */
 .card {
   position: relative;
   border-radius: 8px; /* rounded.md */
@@ -180,7 +187,7 @@ body {
   justify-content: flex-end;
   color: #fff;
   background: var(--card-grad, #1b3a6b);
-  box-shadow: none; /* 扁平无投影 */
+  box-shadow: none; /* 鎵佸钩鏃犳姇褰?*/
   isolation: isolate;
   border: 1px solid rgba(255,255,255,0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -205,7 +212,7 @@ body {
   background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.92) 100%);
 }
 
-/* 游戏Logo圆标 */
+/* 娓告垙Logo鍦嗘爣 */
 .card-logo {
   position: absolute; top: 16px; left: 16px; z-index: 1;
   width: 40px; height: 40px; border-radius: 9999px; /* full */
@@ -217,7 +224,7 @@ body {
 
 .card-body { position: relative; z-index: 1; padding: 20px; }
 
-/* 游戏名：细体 + 大写追踪 */
+/* 娓告垙鍚嶏細缁嗕綋 + 澶у啓杩借釜 */
 .card-game {
   font-family: "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 13px; font-weight: 600; letter-spacing: 1px;
@@ -225,13 +232,13 @@ body {
   color: #fff;
 }
 
-/* tagline：body-dark 灰 */
+/* tagline锛歜ody-dark 鐏?*/
 .card-tagline {
   font: 400 14px/1.5 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   color: rgba(255,255,255,0.7); margin: 0 0 16px;
 }
 
-/* 兑换码块：内嵌面板 */
+/* 鍏戞崲鐮佸潡锛氬唴宓岄潰鏉?*/
 .code-row {
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
   background: rgba(255,255,255,0.08);
@@ -243,7 +250,7 @@ body {
   font-size: 14px; font-weight: 500; letter-spacing: 0.5px;
   color: #fff;
 }
-/* 复制按钮：全圆角胶囊 */
+/* 澶嶅埗鎸夐挳锛氬叏鍦嗚鑳跺泭 */
 .code-copy {
   border: none; background: #0070d1; color: #fff;
   font: 700 12px/1 "Roboto", "Inter", Arial, sans-serif;
@@ -257,7 +264,7 @@ body {
   font: 400 12px/1.5 "Roboto", "Inter", Arial, sans-serif;
   color: rgba(255,255,255,0.6); margin: 2px 0 12px;
 }
-.code-meta .warn { color: #53b1ff; } /* link-dark 蓝 */
+.code-meta .warn { color: #53b1ff; } /* link-dark 钃?*/
 
 .card-empty {
   font: 400 14px/1.5 "Roboto", "Inter", Arial, sans-serif;
@@ -265,7 +272,7 @@ body {
   background: rgba(255,255,255,0.06); border-radius: 8px; padding: 14px; text-align: center;
 }
 
-/* 活动列表 */
+/* 娲诲姩鍒楄〃 */
 .event-item {
   display: block; text-decoration: none; color: inherit;
   background: rgba(255,255,255,0.1);
@@ -292,11 +299,11 @@ body {
   font-size: 12px; font-weight: 600; opacity: 0.95;
   text-shadow: 0 1px 4px rgba(0,0,0,0.75);
 }
-.event-more::after { content: " →"; }
+.event-more::after { content: " 鈫?; }
 
-/* ---------- 线下活动（PlayStation 设计语言） ---------- */
+/* ---------- 鑱斿悕娲诲姩锛圥layStation 璁捐璇█锛?---------- */
 
-/* 区块标题：浅色画布，细体大标题 + 发丝分割线（无装饰） */
+/* 鍖哄潡鏍囬锛氭祬鑹茬敾甯冿紝缁嗕綋澶ф爣棰?+ 鍙戜笣鍒嗗壊绾匡紙鏃犺楗帮級 */
 #events .section-head {
   background: transparent;
   border-radius: 0;
@@ -320,7 +327,7 @@ body {
   margin: 0;
 }
 
-/* 活动卡片：深色 game-tile（surface-dark-card），8px 圆角，无静止投影 */
+/* 娲诲姩鍗＄墖锛氭繁鑹?game-tile锛坰urface-dark-card锛夛紝8px 鍦嗚锛屾棤闈欐鎶曞奖 */
 .event-card {
   position: relative;
   background: #181818; /* surface-dark-card */
@@ -335,7 +342,7 @@ body {
   overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-/* 顶部品牌色条（游戏身份标识） */
+/* 椤堕儴鍝佺墝鑹叉潯锛堟父鎴忚韩浠芥爣璇嗭級 */
 .event-card::before {
   content: "";
   display: block;
@@ -344,10 +351,10 @@ body {
 }
 .event-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.16); /* 仅抬升时出现（soft active shadow） */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.16); /* 浠呮姮鍗囨椂鍑虹幇锛坰oft active shadow锛?*/
 }
 
-/* 卡片头 */
+/* 鍗＄墖澶?*/
 .event-card-head {
   display: flex; align-items: center; gap: 10px;
   background: #121314; /* surface-dark-elevated */
@@ -367,7 +374,7 @@ body {
   letter-spacing: 0; color: #fff;
 }
 
-/* 活动条目：surface-dark-elevated 内嵌面板（8px 圆角，扁平） */
+/* 娲诲姩鏉＄洰锛歴urface-dark-elevated 鍐呭祵闈㈡澘锛?px 鍦嗚锛屾墎骞筹級 */
 .event-card .event-item {
   display: flex;
   flex-direction: column;
@@ -389,7 +396,7 @@ body {
   font: 600 15px/1.4 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .event-card .event-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-/* 标签：badge-info 蓝色胶囊 */
+/* 鏍囩锛歜adge-info 钃濊壊鑳跺泭 */
 .event-card .tag {
   background: #0070d1; /* PlayStation Blue */
   color: #fff;
@@ -400,7 +407,7 @@ body {
   padding: 4px 10px;
   text-shadow: none;
 }
-/* 时间标签：中性灰，低调 */
+/* 鏃堕棿鏍囩锛氫腑鎬х伆锛屼綆璋?*/
 .event-card .tag.time { background: rgba(255,255,255,0.08); color: #cccccc; }
 .event-card .event-summary {
   color: rgba(255,255,255,0.7); /* body-dark */
@@ -408,7 +415,7 @@ body {
   font: 400 14px/1.6 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
   text-shadow: none;
 }
-/* 前进线索：link-dark 蓝 + chevron */
+/* 鍓嶈繘绾跨储锛歭ink-dark 钃?+ chevron */
 .event-card .event-more {
   color: #53b1ff; /* link-dark */
   font: 700 13px/1 "Roboto", "Inter", Arial, "PingFang SC", sans-serif;
@@ -427,6 +434,78 @@ body {
   padding: 14px;
 }
 
+/* ---------- 鑱斿悕娲诲姩锛堝鐢?event-card 缁撴瀯锛?---------- */
+
+#collabs .section-head {
+  background: transparent;
+  border-radius: 0;
+  padding: 0 0 10px;
+  margin-bottom: 24px;
+  text-align: left;
+  border-bottom: 1px solid #f3f3f3;
+}
+#collabs .section-title {
+  color: #000000;
+  text-transform: none;
+  letter-spacing: 0.1px;
+  font: 300 clamp(28px, 4vw, 40px)/1.2 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  margin: 0 0 8px;
+  text-shadow: none;
+}
+#collabs .section-desc {
+  color: rgba(0,0,0,0.6);
+  font: 400 16px/1.5 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  max-width: 720px;
+  margin: 0;
+}
+
+/* 鑱斿悕鏉＄洰 */
+.collab-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #fff;
+  background: #121314;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 15px;
+  margin: 12px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.collab-item:last-child { margin-bottom: 12px; }
+.collab-item:hover { background: #20222a; transform: translateY(-1px); }
+
+.collab-title {
+  color: #fff;
+  margin: 0 0 10px;
+  font: 600 15px/1.4 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/* 鑱斿悕濂栧姳锛氭祬閲戝簳鑹茬獊鍑?*/
+.collab-reward {
+  color: #ffd166;
+  background: rgba(255, 209, 102, 0.12);
+  border: 1px solid rgba(255, 209, 102, 0.25);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font: 500 13px/1.4 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  margin: 0 0 10px;
+}
+
+/* 鍝佺墝鏍囩锛氫笌娓告垙涓昏壊鑱斿姩 */
+.event-card .tag.partner {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffd166;
+  border: none;
+  border-radius: 9999px;
+  font: 600 12px/1 "Roboto", "Inter", Arial, "PingFang SC", sans-serif;
+  letter-spacing: 0.3px;
+  padding: 4px 10px;
+  text-shadow: none;
+}
+
+/* 鑱斿悕鍗＄墖澶嶇敤 event-card 鏍峰紡锛氶《閮?4px 褰╄壊鏉＄敱 --event-bg 鍐冲畾 */
+
 /* ---------- Toast ---------- */
 .toast {
   position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%);
@@ -440,7 +519,7 @@ body {
 .foot { text-align: center; color: var(--ink-soft); font-size: 12.5px; padding: 40px 10px 0; border-top: 1px solid var(--line); margin-top: 40px; }
 .foot-dim { opacity: 0.7; }
 
-/* ---------- 响应式 ---------- */
+/* ---------- 鍝嶅簲寮?---------- */
 @media (max-width: 900px) {
   .game-grid { grid-template-columns: 1fr; }
   .card { min-height: 360px; }
