@@ -102,11 +102,47 @@ function renderEvents(game) {
   return `<article class="event-card" style="--event-bg:${bg}">${head}${body}</article>`;
 }
 
+function renderCollabs(game) {
+  const collabs = game.collabs || [];
+  const t = game.theme || {};
+  const bg = t.primary || '#1b3a6b';
+  let body;
+  if (!collabs.length) {
+    body = `<div class="card-empty">近一个月内暂无新的联名活动公布</div>`;
+  } else {
+    body = collabs
+      .map((c) => {
+        const tags = [];
+        if (c.published) tags.push(`<span class="tag time">发布 ${escapeHtml(c.published)}</span>`);
+        if (c.partner) tags.push(`<span class="tag partner">${escapeHtml(c.partner)}</span>`);
+        if (c.type) tags.push(`<span class="tag">${escapeHtml(c.type)}</span>`);
+        const span = [c.start, c.end].filter(Boolean).join(' ~ ');
+        if (span) tags.push(`<span class="tag">活动 ${escapeHtml(span)}</span>`);
+        return `
+          <a class="collab-item" href="${escapeHtml(c.url || '#')}" target="_blank" rel="noopener">
+            <p class="collab-title">${escapeHtml(c.title)}</p>
+            <div class="event-tags">${tags.join('')}</div>
+            ${c.reward ? `<p class="collab-reward">🎁 ${escapeHtml(c.reward)}</p>` : ''}
+            <p class="event-summary">${escapeHtml(c.summary || '')}</p>
+            <span class="event-more">查看原文${c.source ? ' · ' + escapeHtml(c.source) : ''}</span>
+          </a>`;
+      })
+      .join('');
+  }
+  const head = `
+    <div class="event-card-head">
+      <span class="event-card-logo">${GAME_LOGO[game.slug] || '·'}</span>
+      <span class="event-card-game">${escapeHtml(game.name)} · 联名活动</span>
+    </div>`;
+  return `<article class="event-card" style="--event-bg:${bg}">${head}${body}</article>`;
+}
+
 function render() {
   const d = state.data;
   if (!d || !d.games) return;
   const games = Object.values(d.games);
   $('#codeGrid').innerHTML = games.map(renderCodes).join('');
+  $('#collabGrid').innerHTML = games.map(renderCollabs).join('');
   $('#eventGrid').innerHTML = games.map(renderEvents).join('');
 
   $('#navUpdated').textContent = fmtUpdated(d.meta?.updatedAt);
