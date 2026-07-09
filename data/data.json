@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updatedAt": "2026-07-08T16:14:00+08:00",
-    "mode": "seed",
-    "note": "种子数据：线下活动来自联网检索到的官方/媒体公开报道（已在原文链接标注）；兑换码时效极短，本页自动从米游社抓取，抓取失败时保留上次有效内容。近一周若无新码，则回退展示最近一条存档并标注发布时间。"
+    "updatedAt": "2026-07-09T13:54:00+08:00",
+    "mode": "scraped",
+    "note": "线下活动数据来自米游社原神/星穹铁道/绝区零版块搜索'线下活动'关键词（2026-07-09抓取）。仅显示正在进行或即将开始的活动。兑换码时效极短，本页自动从米游社抓取，抓取失败时保留上次有效内容。近一周若无新码，则回退展示最近一条存档并标注发布时间。"
   },
   "games": {
     "genshin": {
@@ -26,7 +26,8 @@
           "location": "上海 · 南京东路新世界城",
           "summary": "原神「湖光入画」全国唯一主题快闪限时落地新世界城，沉浸式感受提瓦特大陆夏日风情，现场打卡、选购系列限定周边。",
           "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2386a477c4585252",
-          "source": "腾讯新闻"
+          "source": "腾讯新闻",
+          "status": "ongoing"
         },
         {
           "title": "脆脆鲨 × 原神联名快闪【脆脆鲨乐园】@ BilibiliWorld 2026",
@@ -37,7 +38,8 @@
           "location": "上海 · 国家会展中心 6.1H馆 6A14（BilibiliWorld 2026）",
           "summary": "脆脆鲨×原神联名快闪【脆脆鲨乐园】空降 BilibiliWorld 2026，首个品牌和 IP 双展台联动，参与互动可获得联动贴纸与惊喜限量无料。",
           "url": "https://weibo.com/u/3785579782",
-          "source": "微博 @原神"
+          "source": "微博 @原神",
+          "status": "upcoming"
         }
       ]
     },
@@ -62,7 +64,20 @@
           "location": "上海 · 国家会展中心",
           "summary": "米游社官方公布参展 BilibiliWorld 2026，展会时间 2026 年 7 月 10 日–7 月 12 日，展馆地址上海国家会展中心，现场体验最新版本内容。",
           "url": "https://www.miyoushe.com/sr/",
-          "source": "米游社官方"
+          "source": "米游社官方",
+          "status": "upcoming"
+        },
+        {
+          "title": "崩坏：星穹铁道×UGREEN绿联 海外限定联动产品",
+          "published": "2026-07-03",
+          "publishedTs": 1751472000000,
+          "eventStart": "2026-06-30",
+          "eventEnd": null,
+          "location": "日本",
+          "summary": "崩坏：星穹铁道×UGREEN绿联海外版本联动产品及礼盒，日本线下活动。",
+          "url": "https://www.miyoushe.com/sr/search?keyword=线下活动",
+          "source": "米游社 @狼宝LOVE",
+          "status": "ongoing"
         }
       ]
     },
@@ -96,7 +111,8 @@
           "location": "上海 · 国家会展中心",
           "summary": "绝区零确认参展 BilibiliWorld 2026（7/10–7/12，国家会展中心），以集装箱造型展位立体还原「新艾利都」都市美学，沉浸式解锁次元大作。",
           "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_0596a4b080e94552",
-          "source": "2026 下半年全国漫展整理"
+          "source": "2026 下半年全国漫展整理",
+          "status": "upcoming"
         }
       ]
     }
