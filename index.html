@@ -4,23 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="二次元游戏兑换码汇总，收录原神、星穹铁道、绝区零、鸣潮、明日方舟：终末地、异环等游戏的最新兑换码与线下活动信息。" />
-  <title>二次元兑换码汇总</title>
+  <meta name="description" content="浜屾鍏冩父鎴忓厬鎹㈢爜姹囨€伙紝鏀跺綍鍘熺銆佹槦绌归搧閬撱€佺粷鍖洪浂銆侀福娼€佹槑鏃ユ柟鑸燂細缁堟湯鍦般€佸紓鐜瓑娓告垙鐨勬渶鏂板厬鎹㈢爜涓庣嚎涓嬫椿鍔ㄤ俊鎭€? />
+  <title>浜屾鍏冨厬鎹㈢爜姹囨€?/title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- 顶部导航 -->
+  <!-- 椤堕儴瀵艰埅 -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <div class="nav-brand">二次元兑换码汇总</div>
+      <div class="nav-brand">浜屾鍏冨厬鎹㈢爜姹囨€?/div>
       <div class="nav-actions">
-        <span class="nav-updated" id="navUpdated">加载中…</span>
-        <button class="btn-update" id="updateBtn" aria-label="手动更新">
+        <span class="nav-updated" id="navUpdated">鍔犺浇涓€?/span>
+        <button class="btn-update" id="updateBtn" aria-label="鎵嬪姩鏇存柊">
           <span class="spinner" id="spinner" hidden></span>
-          <span id="updateLabel">更新</span>
+          <span id="updateLabel">鏇存柊</span>
         </button>
       </div>
     </div>
@@ -30,39 +30,48 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">国服可用 · 一周内发布</p>
-      <h1 class="hero-title">二次元游戏兑换码汇总</h1>
-      <p class="hero-sub">收录原神、星穹铁道、绝区零、鸣潮、明日方舟：终末地、异环等热门游戏，随时更新兑换码与官方线下活动。</p>
+      <p class="hero-eyebrow">鍥芥湇鍙敤 路 涓€鍛ㄥ唴鍙戝竷</p>
+      <h1 class="hero-title">浜屾鍏冩父鎴忓厬鎹㈢爜姹囨€?/h1>
       <div class="hero-cta">
-        <a href="#codes" class="pill pill-light">查看兑换码</a>
-        <a href="#events" class="pill pill-ghost">线下活动</a>
+        <a href="#codes" class="pill pill-light">鏌ョ湅鍏戞崲鐮?/a>
+        <a href="#collabs" class="pill pill-ghost">鑱斿悕娲诲姩</a>
+        <a href="#events" class="pill pill-ghost">绾夸笅娲诲姩</a>
       </div>
     </div>
-    <div class="hero-scroll" aria-hidden="true">⌄</div>
+
   </section>
 
   <main class="wrap">
-    <!-- 兑换码 -->
+    <!-- 鍏戞崲鐮?-->
     <section id="codes" class="section">
       <div class="section-head">
-        <h2 class="section-title">兑换码</h2>
-        <p class="section-desc">优先展示一周内发布、国服可用的兑换码。若近期无新码，则回退展示最近一条存档并标注发布时间。</p>
+        <h2 class="section-title">鍏戞崲鐮?/h2>
+        <p class="section-desc">浼樺厛灞曠ず涓€鍛ㄥ唴鍙戝竷銆佸浗鏈嶅彲鐢ㄧ殑鍏戞崲鐮併€傝嫢杩戞湡鏃犳柊鐮侊紝鍒欏洖閫€灞曠ず鏈€杩戜竴鏉″瓨妗ｅ苟鏍囨敞鍙戝竷鏃堕棿銆?/p>
       </div>
-      <div class="game-grid" id="codeGrid"><!-- JS 渲染 --></div>
+      <div class="game-grid" id="codeGrid"><!-- JS 娓叉煋 --></div>
     </section>
 
-    <!-- 线下活动 -->
+    <!-- 鑱斿悕娲诲姩 -->
+    <section id="collabs" class="section">
+      <div class="section-head">
+        <h2 class="section-title">鑱斿悕娲诲姩</h2>
+        <p class="section-desc">鍚勬父鎴忎笌鍏朵粬鍝佺墝鐨勮仈鍚嶅悎浣滐紝鍚仈鍚嶅唴瀹逛笌鑾峰彇鏂瑰紡锛岀偣鍑绘煡鐪嬪師鏂囥€?/p>
+      </div>
+      <div class="game-grid" id="collabGrid"><!-- JS 娓叉煋 --></div>
+    </section>
+
+    <!-- 绾夸笅娲诲姩 -->
     <section id="events" class="section">
       <div class="section-head">
-        <h2 class="section-title">线下活动</h2>
-        <p class="section-desc">官方近一个月内公布的线下活动，含发布时间与活动时间，点击卡片查看原文。</p>
+        <h2 class="section-title">绾夸笅娲诲姩</h2>
+        <p class="section-desc">瀹樻柟杩戜竴涓湀鍐呭叕甯冪殑绾夸笅娲诲姩锛屽惈鍙戝竷鏃堕棿涓庢椿鍔ㄦ椂闂达紝鐐瑰嚮鍗＄墖鏌ョ湅鍘熸枃銆?/p>
       </div>
-      <div class="game-grid" id="eventGrid"><!-- JS 渲染 --></div>
+      <div class="game-grid" id="eventGrid"><!-- JS 娓叉煋 --></div>
     </section>
 
     <footer class="foot">
-      <p>数据来源：各游戏官方社区（米游社、库街区、森空岛、TapTap）、公开媒体报道。兑换码时效极短，请以游戏内实际兑换结果为准。</p>
-      <p class="foot-dim">本页面为个人整理工具，与各游戏官方无隶属关系。</p>
+      <p>鏁版嵁鏉ユ簮锛氬悇娓告垙瀹樻柟绀惧尯锛堢背娓哥ぞ銆佸簱琛楀尯銆佹．绌哄矝銆乀apTap锛夈€佸叕寮€濯掍綋鎶ラ亾銆傚厬鎹㈢爜鏃舵晥鏋佺煭锛岃浠ユ父鎴忓唴瀹為檯鍏戞崲缁撴灉涓哄噯銆?/p>
+      <p class="foot-dim">鏈〉闈负涓汉鏁寸悊宸ュ叿锛屼笌鍚勬父鎴忓畼鏂规棤闅跺睘鍏崇郴銆?/p>
     </footer>
   </main>
 
@@ -73,14 +82,14 @@ window.__SEED__ = {
   "meta": {
     "updatedAt": "2026-07-09T15:14:00+08:00",
     "mode": "seed",
-    "note": "二次元游戏兑换码汇总页面。收录鸣潮、明日方舟：终末地、异环等新游戏。兑换码时效极短，本页数据仅供参考，请以游戏内实际兑换结果为准。"
+    "note": "浜屾鍏冩父鎴忓厬鎹㈢爜姹囨€婚〉闈€傛敹褰曢福娼€佹槑鏃ユ柟鑸燂細缁堟湯鍦般€佸紓鐜瓑鏂版父鎴忋€傚厬鎹㈢爜鏃舵晥鏋佺煭锛屾湰椤垫暟鎹粎渚涘弬鑰冿紝璇蜂互娓告垙鍐呭疄闄呭厬鎹㈢粨鏋滀负鍑嗐€?
   },
   "games": {
     "genshin": {
-      "name": "原神",
+      "name": "鍘熺",
       "slug": "genshin",
-      "tagline": "七国之旅 · 提瓦特大陆",
-      "community": "米游社",
+      "tagline": "涓冨浗涔嬫梾 路 鎻愮摝鐗瑰ぇ闄?,
+      "community": "绫虫父绀?,
       "communityUrl": "https://www.miyoushe.com/ys/",
       "theme": {
         "primary": "#74c0fc",
@@ -91,36 +100,66 @@ window.__SEED__ = {
       "codes": [],
       "events": [
         {
-          "title": "原神「湖光入画」全国唯一主题快闪",
+          "title": "鍘熺銆屾箹鍏夊叆鐢汇€嶅叏鍥藉敮涓€涓婚蹇棯",
           "published": "2026-07-03",
           "publishedTs": 1751472000000,
           "eventStart": "2026-07-01",
           "eventEnd": "2026-07-31",
-          "location": "上海 · 南京东路新世界城",
-          "summary": "原神「湖光入画」全国唯一主题快闪限时落地新世界城，沉浸式感受提瓦特大陆夏日风情，现场打卡、选购系列限定周边。",
+          "location": "涓婃捣 路 鍗椾含涓滆矾鏂颁笘鐣屽煄",
+          "summary": "鍘熺銆屾箹鍏夊叆鐢汇€嶅叏鍥藉敮涓€涓婚蹇棯闄愭椂钀藉湴鏂颁笘鐣屽煄锛屾矇娴稿紡鎰熷彈鎻愮摝鐗瑰ぇ闄嗗鏃ラ鎯咃紝鐜板満鎵撳崱銆侀€夎喘绯诲垪闄愬畾鍛ㄨ竟銆?,
           "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2386a477c4585252",
-          "source": "腾讯新闻",
+          "source": "鑵捐鏂伴椈",
           "status": "ongoing"
         },
         {
-          "title": "脆脆鲨 × 原神联名快闪【脆脆鲨乐园】@ BilibiliWorld 2026",
+          "title": "鑴嗚剢椴?脳 鍘熺鑱斿悕蹇棯銆愯剢鑴嗛波涔愬洯銆慇 BilibiliWorld 2026",
           "published": "2026-07-06",
           "publishedTs": 1751731200000,
           "eventStart": "2026-07-10",
           "eventEnd": "2026-07-12",
-          "location": "上海 · 国家会展中心 6.1H馆 6A14（BilibiliWorld 2026）",
-          "summary": "脆脆鲨×原神联名快闪【脆脆鲨乐园】空降 BilibiliWorld 2026，首个品牌和 IP 双展台联动，参与互动可获得联动贴纸与惊喜限量无料。",
+          "location": "涓婃捣 路 鍥藉浼氬睍涓績 6.1H棣?6A14锛圔ilibiliWorld 2026锛?,
+          "summary": "鑴嗚剢椴楀師绁炶仈鍚嶅揩闂€愯剢鑴嗛波涔愬洯銆戠┖闄?BilibiliWorld 2026锛岄涓搧鐗屽拰 IP 鍙屽睍鍙拌仈鍔紝鍙備笌浜掑姩鍙幏寰楄仈鍔ㄨ创绾镐笌鎯婂枩闄愰噺鏃犳枡銆?,
           "url": "https://weibo.com/u/3785579782",
-          "source": "微博 @原神",
+          "source": "寰崥 @鍘熺",
           "status": "upcoming"
+        }
+      ],
+      "collabs": [
+        {
+          "title": "鍘熺 脳 鍠滆尪 鑱斿姩",
+          "partner": "鍠滆尪",
+          "type": "椁愰ギ",
+          "published": "2026-07-01",
+          "publishedTs": 1751308800000,
+          "start": "2026-07-05",
+          "end": "2026-07-31",
+          "reward": "鑱斿姩楗搧 + 闄愬畾鍛ㄨ竟璐寸焊",
+          "summary": "璐拱鑱斿姩楗搧銆岄璧蜂箣鑼躲€嶈幏璧犳父鎴忓唴椋庤捣涔嬭尪鍚屾璐寸焊锛岄儴鍒嗛棬搴楄鏈夊師绁炰富棰樿楗版墦鍗＄偣銆?,
+          "url": "https://weibo.com/u/3785579782",
+          "source": "寰崥 @鍘熺",
+          "status": "ongoing"
+        },
+        {
+          "title": "鍘熺 脳 蹇呰儨瀹?鑱斿姩",
+          "partner": "蹇呰儨瀹?,
+          "type": "椁愰ギ",
+          "published": "2026-06-25",
+          "publishedTs": 1750800000000,
+          "start": "2026-06-28",
+          "end": "2026-07-20",
+          "reward": "鑱斿姩濂楅 + 娓告垙鍐呭厬鎹㈢爜锛堣彶鏋椕?0锛?,
+          "summary": "蹇呰儨瀹㈠叏鍥介棬搴楁帹鍑哄師绁炶仈鍔ㄥ椁愶紝璐拱鍗宠禒娓告垙鍐呭厬鎹㈢爜銆?,
+          "url": "https://weibo.com/u/3785579782",
+          "source": "寰崥 @鍘熺",
+          "status": "ongoing"
         }
       ]
     },
     "sr": {
-      "name": "崩坏：星穹铁道",
+      "name": "宕╁潖锛氭槦绌归搧閬?,
       "slug": "sr",
-      "tagline": "星穹列车 · 开拓星海",
-      "community": "米游社",
+      "tagline": "鏄熺┕鍒楄溅 路 寮€鎷撴槦娴?,
+      "community": "绫虫父绀?,
       "communityUrl": "https://www.miyoushe.com/sr/",
       "theme": {
         "primary": "#b388ff",
@@ -131,36 +170,52 @@ window.__SEED__ = {
       "codes": [],
       "events": [
         {
-          "title": "崩坏：星穹铁道 参展 BilibiliWorld 2026",
+          "title": "宕╁潖锛氭槦绌归搧閬?鍙傚睍 BilibiliWorld 2026",
           "published": "2026-06-24",
           "publishedTs": 1750694400000,
           "eventStart": "2026-07-10",
           "eventEnd": "2026-07-12",
-          "location": "上海 · 国家会展中心",
-          "summary": "米游社官方公布参展 BilibiliWorld 2026，展会时间 2026 年 7 月 10 日–7 月 12 日，展馆地址上海国家会展中心，现场体验最新版本内容。",
+          "location": "涓婃捣 路 鍥藉浼氬睍涓績",
+          "summary": "绫虫父绀惧畼鏂瑰叕甯冨弬灞?BilibiliWorld 2026锛屽睍浼氭椂闂?2026 骞?7 鏈?10 鏃モ€? 鏈?12 鏃ワ紝灞曢鍦板潃涓婃捣鍥藉浼氬睍涓績锛岀幇鍦轰綋楠屾渶鏂扮増鏈唴瀹广€?,
           "url": "https://www.miyoushe.com/sr/",
-          "source": "米游社官方",
+          "source": "绫虫父绀惧畼鏂?,
           "status": "upcoming"
         },
         {
-          "title": "崩坏：星穹铁道×UGREEN绿联 海外限定联动产品",
+          "title": "宕╁潖锛氭槦绌归搧閬撁桿GREEN缁胯仈 娴峰闄愬畾鑱斿姩浜у搧",
           "published": "2026-07-03",
           "publishedTs": 1751472000000,
           "eventStart": "2026-06-30",
           "eventEnd": null,
-          "location": "日本",
-          "summary": "崩坏：星穹铁道×UGREEN绿联海外版本联动产品及礼盒，日本线下活动。",
-          "url": "https://www.miyoushe.com/sr/search?keyword=线下活动",
-          "source": "米游社 @狼宝LOVE",
+          "location": "鏃ユ湰",
+          "summary": "宕╁潖锛氭槦绌归搧閬撁桿GREEN缁胯仈娴峰鐗堟湰鑱斿姩浜у搧鍙婄ぜ鐩掞紝鏃ユ湰绾夸笅娲诲姩銆?,
+          "url": "https://www.miyoushe.com/sr/search?keyword=绾夸笅娲诲姩",
+          "source": "绫虫父绀?@鐙煎疂LOVE",
+          "status": "ongoing"
+        }
+      ],
+      "collabs": [
+        {
+          "title": "宕╁潖锛氭槦绌归搧閬?脳 UGREEN缁胯仈 鑱斿姩",
+          "partner": "UGREEN缁胯仈",
+          "type": "鏁扮爜",
+          "published": "2026-07-01",
+          "publishedTs": 1751308800000,
+          "start": "2026-07-01",
+          "end": null,
+          "reward": "闄愬畾鑱斿悕绀肩洅锛堝厖鐢靛櫒 + 娓告垙鍛ㄨ竟锛?,
+          "summary": "UGREEN缁胯仈 脳 鏄熺┕閾侀亾鏃ユ湰绾夸笅鑱斿姩锛岃仈鍚嶉檺瀹氱ぜ鐩掑惈鏄熼搧瀹氬埗鍏呯數鍣ㄤ笌瑙掕壊鍛ㄨ竟銆?,
+          "url": "https://www.miyoushe.com/sr/",
+          "source": "绫虫父绀惧畼鏂?,
           "status": "ongoing"
         }
       ]
     },
     "zzz": {
-      "name": "绝区零",
+      "name": "缁濆尯闆?,
       "slug": "zzz",
-      "tagline": "新艾利都 · 空洞都市",
-      "community": "米游社",
+      "tagline": "鏂拌壘鍒╅兘 路 绌烘礊閮藉競",
+      "community": "绫虫父绀?,
       "communityUrl": "https://www.miyoushe.com/zzz/",
       "theme": {
         "primary": "#ff3d7f",
@@ -171,33 +226,49 @@ window.__SEED__ = {
       "codes": [
         {
           "code": "PULUOMIYA0506",
-          "reward": "菲林（2.8 前瞻特别节目兑换码）",
+          "reward": "鑿叉灄锛?.8 鍓嶇灮鐗瑰埆鑺傜洰鍏戞崲鐮侊級",
           "published": "2026-05-04",
-          "source": "绝区零 2.8 前瞻特别节目",
-          "note": "历史存档 · 前瞻码时效极短，可能已失效，仅供参照",
+          "source": "缁濆尯闆?2.8 鍓嶇灮鐗瑰埆鑺傜洰",
+          "note": "鍘嗗彶瀛樻。 路 鍓嶇灮鐮佹椂鏁堟瀬鐭紝鍙兘宸插け鏁堬紝浠呬緵鍙傜収",
           "reliable": false
         }
       ],
       "events": [
         {
-          "title": "绝区零 参展 BilibiliWorld 2026",
+          "title": "缁濆尯闆?鍙傚睍 BilibiliWorld 2026",
           "published": "2026-07-06",
           "publishedTs": 1751731200000,
           "eventStart": "2026-07-10",
           "eventEnd": "2026-07-12",
-          "location": "上海 · 国家会展中心",
-          "summary": "绝区零确认参展 BilibiliWorld 2026（7/10–7/12，国家会展中心），以集装箱造型展位立体还原「新艾利都」都市美学，沉浸式解锁次元大作。",
+          "location": "涓婃捣 路 鍥藉浼氬睍涓績",
+          "summary": "缁濆尯闆剁‘璁ゅ弬灞?BilibiliWorld 2026锛?/10鈥?/12锛屽浗瀹朵細灞曚腑蹇冿級锛屼互闆嗚绠遍€犲瀷灞曚綅绔嬩綋杩樺師銆屾柊鑹惧埄閮姐€嶉兘甯傜編瀛︼紝娌夋蹈寮忚В閿佹鍏冨ぇ浣溿€?,
           "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_0596a4b080e94552",
-          "source": "2026 下半年全国漫展整理",
+          "source": "2026 涓嬪崐骞村叏鍥芥极灞曟暣鐞?,
+          "status": "upcoming"
+        }
+      ],
+      "collabs": [
+        {
+          "title": "缁濆尯闆?脳 鑴嗚剢椴?鑱斿姩",
+          "partner": "鑴嗚剢椴?,
+          "type": "闆堕",
+          "published": "2026-07-06",
+          "publishedTs": 1751731200000,
+          "start": "2026-07-10",
+          "end": "2026-07-12",
+          "reward": "闄愬畾闆堕绀煎寘 + BilibiliWorld鏃犳枡",
+          "summary": "鑴嗚剢椴?脳 缁濆尯闆?BilibiliWorld 2026 鑱斿姩鎽婁綅锛岃喘涔拌仈鍔ㄩ浂椋熷寘鍙幏璧犻檺瀹氬懆杈逛笌娓告垙绀煎寘鐮併€?,
+          "url": "https://weibo.com/u/3785579782",
+          "source": "寰崥 @缁濆尯闆?,
           "status": "upcoming"
         }
       ]
     },
     "wuwa": {
-      "name": "鸣潮",
+      "name": "楦ｆ疆",
       "slug": "wuwa",
-      "tagline": "开放世界 · 动作冒险",
-      "community": "库街区",
+      "tagline": "寮€鏀句笘鐣?路 鍔ㄤ綔鍐掗櫓",
+      "community": "搴撹鍖?,
       "communityUrl": "https://www.kurobbs.com/mc/home/9",
       "theme": {
         "primary": "#ff8c00",
@@ -206,13 +277,14 @@ window.__SEED__ = {
         "bgImage": "assets/wuwa.jpg"
       },
       "codes": [],
-      "events": []
+      "events": [],
+      "collabs": []
     },
     "endfield": {
-      "name": "明日方舟：终末地",
+      "name": "鏄庢棩鏂硅垷锛氱粓鏈湴",
       "slug": "endfield",
-      "tagline": "工业废墟 · 末日生存",
-      "community": "森空岛",
+      "tagline": "宸ヤ笟搴熷 路 鏈棩鐢熷瓨",
+      "community": "妫┖宀?,
       "communityUrl": "https://www.skland.com/game/endfield?cateId=12",
       "theme": {
         "primary": "#5a6a7a",
@@ -221,12 +293,28 @@ window.__SEED__ = {
         "bgImage": "assets/endfield.jpg"
       },
       "codes": [],
-      "events": []
+      "events": [],
+      "collabs": [
+        {
+          "title": "鏄庢棩鏂硅垷锛氱粓鏈湴 脳 鎮犺埅椴滈吙 鑱斿姩",
+          "partner": "鎮犺埅椴滈吙",
+          "type": "椁愰ギ",
+          "published": "2026-07-02",
+          "publishedTs": 1751395200000,
+          "start": "2026-07-05",
+          "end": "2026-08-05",
+          "reward": "闄愬畾绮鹃吙鍟ら厭 + 妫┖宀涚Н鍒?,
+          "summary": "缁堟湯鍦?脳 鎮犺埅鑱斿悕绮鹃吙銆屽簾鍦熻壘灏斻€嶄笂绾匡紝璐拱鍗宠禒妫┖宀涚Н鍒嗕笌闄愬畾鍛ㄨ竟銆?,
+          "url": "https://www.skland.com/game/endfield",
+          "source": "妫┖宀涘畼鏂?,
+          "status": "ongoing"
+        }
+      ]
     },
     "yuhuan": {
-      "name": "异环",
+      "name": "寮傜幆",
       "slug": "yuhuan",
-      "tagline": "都市异闻 · 超自然冒险",
+      "tagline": "閮藉競寮傞椈 路 瓒呰嚜鐒跺啋闄?,
       "community": "TapTap",
       "communityUrl": "https://www.taptap.cn/forum/g805079",
       "theme": {
@@ -236,7 +324,8 @@ window.__SEED__ = {
         "bgImage": "assets/yuhuan.jpg"
       },
       "codes": [],
-      "events": []
+      "events": [],
+      "collabs": []
     }
   }
 };
