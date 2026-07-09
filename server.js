@@ -1,6 +1,7 @@
 // 米哈游兑换码 & 线下活动 H5 页面 —— 零依赖 Node 服务
 // 功能：托管前端 / 提供 /api/data / 手动与每日自动更新 / 尝试从米游社抓取最新资讯
 // 运行：node server.js   （默认端口 8787，可用 PORT 环境变量覆盖）
+// Railway 触发时间戳: 2026-07-09T08:53:00+08:00
 
 const http = require('http');
 const fs = require('fs');
