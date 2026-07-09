@@ -1,207 +1,231 @@
 {
-  "meta": {
-    "updatedAt": "2026-07-09T15:14:00+08:00",
-    "mode": "seed",
-    "note": "二次元游戏兑换码汇总页面。收录鸣潮、明日方舟：终末地、异环等新游戏。兑换码时效极短，本页数据仅供参考，请以游戏内实际兑换结果为准。"
-  },
-  "games": {
-    "genshin": {
-      "name": "原神",
-      "slug": "genshin",
-      "tagline": "七国之旅 · 提瓦特大陆",
-      "community": "米游社",
-      "communityUrl": "https://www.miyoushe.com/ys/",
-      "theme": {
-        "primary": "#74c0fc",
-        "accent": "#ffd166",
-        "gradient": "linear-gradient(135deg, #0b1d3a 0%, #1b3a6b 55%, #2a5b9e 100%)",
-        "bgImage": "assets/genshin.jpg"
-      },
-      "codes": [],
-      "events": [
-        {
-          "title": "原神「湖光入画」全国唯一主题快闪",
-          "published": "2026-07-03",
-          "publishedTs": 1751472000000,
-          "eventStart": "2026-07-01",
-          "eventEnd": "2026-07-31",
-          "location": "上海 · 南京东路新世界城",
-          "summary": "原神「湖光入画」全国唯一主题快闪限时落地新世界城，沉浸式感受提瓦特大陆夏日风情，现场打卡、选购系列限定周边。",
-          "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_2386a477c4585252",
-          "source": "腾讯新闻",
-          "status": "ongoing"
-        },
-        {
-          "title": "脆脆鲨 × 原神联名快闪【脆脆鲨乐园】@ BilibiliWorld 2026",
-          "published": "2026-07-06",
-          "publishedTs": 1751731200000,
-          "eventStart": "2026-07-10",
-          "eventEnd": "2026-07-12",
-          "location": "上海 · 国家会展中心 6.1H馆 6A14（BilibiliWorld 2026）",
-          "summary": "脆脆鲨×原神联名快闪【脆脆鲨乐园】空降 BilibiliWorld 2026，首个品牌和 IP 双展台联动，参与互动可获得联动贴纸与惊喜限量无料。",
-          "url": "https://weibo.com/u/3785579782",
-          "source": "微博 @原神",
-          "status": "upcoming"
-        }
-      ],
-      "collabs": []
-    },
-    "sr": {
-      "name": "崩坏：星穹铁道",
-      "slug": "sr",
-      "tagline": "星穹列车 · 开拓星海",
-      "community": "米游社",
-      "communityUrl": "https://www.miyoushe.com/sr/",
-      "theme": {
-        "primary": "#b388ff",
-        "accent": "#5ad1ff",
-        "gradient": "linear-gradient(135deg, #2b1055 0%, #4b2a8a 50%, #7597de 100%)",
-        "bgImage": "assets/sr.jpg"
-      },
-      "codes": [],
-      "events": [
-        {
-          "title": "崩坏：星穹铁道 参展 BilibiliWorld 2026",
-          "published": "2026-06-24",
-          "publishedTs": 1750694400000,
-          "eventStart": "2026-07-10",
-          "eventEnd": "2026-07-12",
-          "location": "上海 · 国家会展中心",
-          "summary": "米游社官方公布参展 BilibiliWorld 2026，展会时间 2026 年 7 月 10 日–7 月 12 日，展馆地址上海国家会展中心，现场体验最新版本内容。",
-          "url": "https://www.miyoushe.com/sr/",
-          "source": "米游社官方",
-          "status": "upcoming"
-        },
-        {
-          "title": "崩坏：星穹铁道×UGREEN绿联 海外限定联动产品",
-          "published": "2026-07-03",
-          "publishedTs": 1751472000000,
-          "eventStart": "2026-06-30",
-          "eventEnd": null,
-          "location": "日本",
-          "summary": "崩坏：星穹铁道×UGREEN绿联海外版本联动产品及礼盒，日本线下活动。",
-          "url": "https://www.miyoushe.com/sr/search?keyword=线下活动",
-          "source": "米游社 @狼宝LOVE",
-          "status": "ongoing"
-        }
-      ],
-      "collabs": [
-        {
-          "title": "崩坏：星穹铁道 × UGREEN绿联 联动",
-          "partner": "UGREEN绿联",
-          "type": "数码",
-          "published": "2026-07-01",
-          "publishedTs": 1751308800000,
-          "start": "2026-07-01",
-          "end": null,
-          "reward": "限定联名礼盒（充电器 + 游戏周边）",
-          "summary": "UGREEN绿联 × 星穹铁道日本线下联动，联名限定礼盒含星铁定制充电器与角色周边。",
-          "url": "https://www.miyoushe.com/sr/",
-          "source": "米游社官方",
-          "status": "ongoing"
-        }
-      ]
-    },
-    "zzz": {
-      "name": "绝区零",
-      "slug": "zzz",
-      "tagline": "新艾利都 · 空洞都市",
-      "community": "米游社",
-      "communityUrl": "https://www.miyoushe.com/zzz/",
-      "theme": {
-        "primary": "#ff3d7f",
-        "accent": "#21e6c1",
-        "gradient": "linear-gradient(135deg, #1a0b2e 0%, #6a1247 50%, #ff2e63 100%)",
-        "bgImage": "assets/zzz.jpg"
-      },
-      "codes": [
-        {
-          "code": "PULUOMIYA0506",
-          "reward": "菲林（2.8 前瞻特别节目兑换码）",
-          "published": "2026-05-04",
-          "source": "绝区零 2.8 前瞻特别节目",
-          "note": "历史存档 · 前瞻码时效极短，可能已失效，仅供参照",
-          "reliable": false
-        }
-      ],
-      "events": [
-        {
-          "title": "绝区零 参展 BilibiliWorld 2026",
-          "published": "2026-07-06",
-          "publishedTs": 1751731200000,
-          "eventStart": "2026-07-10",
-          "eventEnd": "2026-07-12",
-          "location": "上海 · 国家会展中心",
-          "summary": "绝区零确认参展 BilibiliWorld 2026（7/10–7/12，国家会展中心），以集装箱造型展位立体还原「新艾利都」都市美学，沉浸式解锁次元大作。",
-          "url": "https://so.html5.qq.com/page/real/search_news?docid=70000021_0596a4b080e94552",
-          "source": "2026 下半年全国漫展整理",
-          "status": "upcoming"
-        }
-      ],
-      "collabs": [
-        {
-          "title": "绝区零 × 脆脆鲨 联动",
-          "partner": "脆脆鲨",
-          "type": "零食",
-          "published": "2026-07-06",
-          "publishedTs": 1751731200000,
-          "start": "2026-07-10",
-          "end": "2026-07-12",
-          "reward": "限定零食礼包 + BilibiliWorld无料",
-          "summary": "脆脆鲨 × 绝区零 BilibiliWorld 2026 联动摊位，购买联动零食包可获赠限定周边与游戏礼包码。",
-          "url": "https://weibo.com/u/3785579782",
-          "source": "微博 @绝区零",
-          "status": "upcoming"
-        }
-      ]
-    },
-    "wuwa": {
-      "name": "鸣潮",
-      "slug": "wuwa",
-      "tagline": "开放世界 · 动作冒险",
-      "community": "库街区",
-      "communityUrl": "https://www.kurobbs.com/mc/home/9",
-      "theme": {
-        "primary": "#ff8c00",
-        "accent": "#ffd700",
-        "gradient": "linear-gradient(135deg, #1a1a1a 0%, #2d2d1a 50%, #4a4a2a 100%)",
-        "bgImage": "assets/wuwa.jpg"
-      },
-      "codes": [],
-      "events": [],
-      "collabs": []
-    },
-    "endfield": {
-      "name": "明日方舟：终末地",
-      "slug": "endfield",
-      "tagline": "工业废墟 · 末日生存",
-      "community": "森空岛",
-      "communityUrl": "https://www.skland.com/game/endfield?cateId=12",
-      "theme": {
-        "primary": "#5a6a7a",
-        "accent": "#c0c8d0",
-        "gradient": "linear-gradient(135deg, #0a0a0a 0%, #1a2a3a 50%, #2a4a5a 100%)",
-        "bgImage": "assets/endfield.jpg"
-      },
-      "codes": [],
-      "events": [],
-      "collabs": []
-    },
-    "yuhuan": {
-      "name": "异环",
-      "slug": "yuhuan",
-      "tagline": "都市异闻 · 超自然冒险",
-      "community": "TapTap",
-      "communityUrl": "https://www.taptap.cn/forum/g805079",
-      "theme": {
-        "primary": "#9b59b6",
-        "accent": "#e91e63",
-        "gradient": "linear-gradient(135deg, #1a0a1a 0%, #2a1a3a 50%, #4a2a5a 100%)",
-        "bgImage": "assets/yuhuan.jpg"
-      },
-      "codes": [],
-      "events": [],
-      "collabs": []
-    }
-  }
+    "meta":  {
+                 "updatedAt":  "2026-07-09T15:14:00+08:00",
+                 "mode":  "seed",
+                 "note":  "二次元游戏兑换码汇总页面。收录鸣潮、明日方舟：终末地、异环等新游戏。兑换码时效极短，本页数据仅供参考，请以游戏内实际兑换结果为准。"
+             },
+    "games":  {
+                  "genshin":  {
+                                  "name":  "原神",
+                                  "slug":  "genshin",
+                                  "tagline":  "七国之旅 · 提瓦特大陆",
+                                  "community":  "米游社",
+                                  "communityUrl":  "https://www.miyoushe.com/ys/",
+                                  "theme":  {
+                                                "primary":  "#74c0fc",
+                                                "accent":  "#ffd166",
+                                                "gradient":  "linear-gradient(135deg, #0b1d3a 0%, #1b3a6b 55%, #2a5b9e 100%)",
+                                                "bgImage":  "assets/genshin.jpg"
+                                            },
+                                  "codes":  [
+
+                                            ],
+                                  "events":  [
+                                                 {
+                                                     "title":  "原神「湖光入画」全国唯一主题快闪",
+                                                     "published":  "2026-07-03",
+                                                     "publishedTs":  1751472000000,
+                                                     "eventStart":  "2026-07-01",
+                                                     "eventEnd":  "2026-07-31",
+                                                     "location":  "上海 · 南京东路新世界城",
+                                                     "summary":  "原神「湖光入画」全国唯一主题快闪限时落地新世界城，沉浸式感受提瓦特大陆夏日风情，现场打卡、选购系列限定周边。",
+                                                     "url":  "https://so.html5.qq.com/page/real/search_news?docid=70000021_2386a477c4585252",
+                                                     "source":  "腾讯新闻",
+                                                     "status":  "ongoing"
+                                                 },
+                                                 {
+                                                     "title":  "脆脆鲨 × 原神联名快闪【脆脆鲨乐园】@ BilibiliWorld 2026",
+                                                     "published":  "2026-07-06",
+                                                     "publishedTs":  1751731200000,
+                                                     "eventStart":  "2026-07-10",
+                                                     "eventEnd":  "2026-07-12",
+                                                     "location":  "上海 · 国家会展中心 6.1H馆 6A14（BilibiliWorld 2026）",
+                                                     "summary":  "脆脆鲨×原神联名快闪【脆脆鲨乐园】空降 BilibiliWorld 2026，首个品牌和 IP 双展台联动，参与互动可获得联动贴纸与惊喜限量无料。",
+                                                     "url":  "https://weibo.com/6593199887",
+                                                     "source":  "微博 @原神",
+                                                     "status":  "upcoming"
+                                                 }
+                                             ],
+                                  "collabs":  [
+
+                                              ]
+                              },
+                  "sr":  {
+                             "name":  "崩坏：星穹铁道",
+                             "slug":  "sr",
+                             "tagline":  "星穹列车 · 开拓星海",
+                             "community":  "米游社",
+                             "communityUrl":  "https://www.miyoushe.com/sr/",
+                             "theme":  {
+                                           "primary":  "#b388ff",
+                                           "accent":  "#5ad1ff",
+                                           "gradient":  "linear-gradient(135deg, #2b1055 0%, #4b2a8a 50%, #7597de 100%)",
+                                           "bgImage":  "assets/sr.jpg"
+                                       },
+                             "codes":  [
+
+                                       ],
+                             "events":  [
+                                            {
+                                                "title":  "崩坏：星穹铁道 参展 BilibiliWorld 2026",
+                                                "published":  "2026-06-24",
+                                                "publishedTs":  1750694400000,
+                                                "eventStart":  "2026-07-10",
+                                                "eventEnd":  "2026-07-12",
+                                                "location":  "上海 · 国家会展中心",
+                                                "summary":  "米游社官方公布参展 BilibiliWorld 2026，展会时间 2026 年 7 月 10 日–7 月 12 日，展馆地址上海国家会展中心，现场体验最新版本内容。",
+                                                "url":  "https://bbs.mihoyo.com/sr/",
+                                                "source":  "米游社官方",
+                                                "status":  "upcoming"
+                                            },
+                                            {
+                                                "title":  "崩坏：星穹铁道×UGREEN绿联 海外限定联动产品",
+                                                "published":  "2026-07-03",
+                                                "publishedTs":  1751472000000,
+                                                "eventStart":  "2026-06-30",
+                                                "eventEnd":  null,
+                                                "location":  "日本",
+                                                "summary":  "崩坏：星穹铁道×UGREEN绿联海外版本联动产品及礼盒，日本线下活动。",
+                                                "url":  "https://so.html5.qq.com/page/real/search_news?docid=70000021_4026a32185d84452",
+                                                "source":  "米游社 @狼宝LOVE",
+                                                "status":  "ongoing"
+                                            }
+                                        ],
+                             "collabs":  [
+                                             {
+                                                 "title":  "崩坏：星穹铁道 × UGREEN绿联 联动",
+                                                 "partner":  "UGREEN绿联",
+                                                 "type":  "数码",
+                                                 "published":  "2026-07-01",
+                                                 "publishedTs":  1751308800000,
+                                                 "start":  "2026-07-01",
+                                                 "end":  null,
+                                                 "reward":  "限定联名礼盒（充电器 + 游戏周边）",
+                                                 "summary":  "UGREEN绿联 × 星穹铁道日本线下联动，联名限定礼盒含星铁定制充电器与角色周边。",
+                                                 "url":  "https://www.lulian.cn/",
+                                                 "source":  "米游社官方",
+                                                 "status":  "ongoing"
+                                             }
+                                         ]
+                         },
+                  "zzz":  {
+                              "name":  "绝区零",
+                              "slug":  "zzz",
+                              "tagline":  "新艾利都 · 空洞都市",
+                              "community":  "米游社",
+                              "communityUrl":  "https://www.miyoushe.com/zzz/",
+                              "theme":  {
+                                            "primary":  "#ff3d7f",
+                                            "accent":  "#21e6c1",
+                                            "gradient":  "linear-gradient(135deg, #1a0b2e 0%, #6a1247 50%, #ff2e63 100%)",
+                                            "bgImage":  "assets/zzz.jpg"
+                                        },
+                              "codes":  [
+                                            {
+                                                "code":  "PULUOMIYA0506",
+                                                "reward":  "菲林（2.8 前瞻特别节目兑换码）",
+                                                "published":  "2026-05-04",
+                                                "source":  "绝区零 2.8 前瞻特别节目",
+                                                "note":  "历史存档 · 前瞻码时效极短，可能已失效，仅供参照",
+                                                "reliable":  false
+                                            }
+                                        ],
+                              "events":  [
+                                             {
+                                                 "title":  "绝区零 参展 BilibiliWorld 2026",
+                                                 "published":  "2026-07-06",
+                                                 "publishedTs":  1751731200000,
+                                                 "eventStart":  "2026-07-10",
+                                                 "eventEnd":  "2026-07-12",
+                                                 "location":  "上海 · 国家会展中心",
+                                                 "summary":  "绝区零确认参展 BilibiliWorld 2026（7/10–7/12，国家会展中心），以集装箱造型展位立体还原「新艾利都」都市美学，沉浸式解锁次元大作。",
+                                                 "url":  "https://so.html5.qq.com/page/real/search_news?docid=70000021_0596a4b080e94552",
+                                                 "source":  "2026 下半年全国漫展整理",
+                                                 "status":  "upcoming"
+                                             }
+                                         ],
+                              "collabs":  [
+                                              {
+                                                  "title":  "绝区零 × 脆脆鲨 联动",
+                                                  "partner":  "脆脆鲨",
+                                                  "type":  "零食",
+                                                  "published":  "2026-07-06",
+                                                  "publishedTs":  1751731200000,
+                                                  "start":  "2026-07-10",
+                                                  "end":  "2026-07-12",
+                                                  "reward":  "限定零食礼包 + BilibiliWorld无料",
+                                                  "summary":  "脆脆鲨 × 绝区零 BilibiliWorld 2026 联动摊位，购买联动零食包可获赠限定周边与游戏礼包码。",
+                                                  "url":  "https://weibo.com/u/3785579782",
+                                                  "source":  "微博 @绝区零",
+                                                  "status":  "upcoming"
+                                              }
+                                          ]
+                          },
+                  "wuwa":  {
+                               "name":  "鸣潮",
+                               "slug":  "wuwa",
+                               "tagline":  "开放世界 · 动作冒险",
+                               "community":  "库街区",
+                               "communityUrl":  "https://www.kurobbs.com/mc/home/9",
+                               "theme":  {
+                                             "primary":  "#ff8c00",
+                                             "accent":  "#ffd700",
+                                             "gradient":  "linear-gradient(135deg, #1a1a1a 0%, #2d2d1a 50%, #4a4a2a 100%)",
+                                             "bgImage":  "assets/wuwa.jpg"
+                                         },
+                               "codes":  [
+
+                                         ],
+                               "events":  [
+
+                                          ],
+                               "collabs":  [
+
+                                           ]
+                           },
+                  "endfield":  {
+                                   "name":  "明日方舟：终末地",
+                                   "slug":  "endfield",
+                                   "tagline":  "工业废墟 · 末日生存",
+                                   "community":  "森空岛",
+                                   "communityUrl":  "https://www.skland.com/game/endfield?cateId=12",
+                                   "theme":  {
+                                                 "primary":  "#5a6a7a",
+                                                 "accent":  "#c0c8d0",
+                                                 "gradient":  "linear-gradient(135deg, #0a0a0a 0%, #1a2a3a 50%, #2a4a5a 100%)",
+                                                 "bgImage":  "assets/endfield.jpg"
+                                             },
+                                   "codes":  [
+
+                                             ],
+                                   "events":  [
+
+                                              ],
+                                   "collabs":  [
+
+                                               ]
+                               },
+                  "yuhuan":  {
+                                 "name":  "异环",
+                                 "slug":  "yuhuan",
+                                 "tagline":  "都市异闻 · 超自然冒险",
+                                 "community":  "TapTap",
+                                 "communityUrl":  "https://www.taptap.cn/forum/g805079",
+                                 "theme":  {
+                                               "primary":  "#9b59b6",
+                                               "accent":  "#e91e63",
+                                               "gradient":  "linear-gradient(135deg, #1a0a1a 0%, #2a1a3a 50%, #4a2a5a 100%)",
+                                               "bgImage":  "assets/yuhuan.jpg"
+                                           },
+                                 "codes":  [
+
+                                           ],
+                                 "events":  [
+
+                                            ],
+                                 "collabs":  [
+
+                                             ]
+                             }
+              }
 }
