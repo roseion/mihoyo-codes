@@ -10,7 +10,7 @@ const { URL } = require('url');
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, 'data', 'data.json');
 const PUBLIC_DIR = ROOT;
-const PORT = process.env.PORT || 8787;
+const PORT = process.env.PORT || 3000;
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -232,20 +232,20 @@ function serveApi(res, status, obj) {
 const server = http.createServer(async (req, res) => {
   const u = new URL(req.url, `http://${req.headers.host}`);
   const pathname = decodeURIComponent(u.pathname);
-  
-  // 健康检查（Railway HTTP 代理需要快速响应）
-  if (pathname === '/up' || pathname === '/health') {
-    addCors(res);
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('ok');
-    return;
-  }
 
   // CORS 预检
   if (req.method === 'OPTIONS') {
     addCors(res);
     res.writeHead(204);
     return res.end();
+  }
+
+  // 健康检查（Railway HTTP 代理需要快速响应）
+  if (pathname === '/up' || pathname === '/health') {
+    addCors(res);
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('ok');
+    return;
   }
 
   // API: 取数据
@@ -276,7 +276,7 @@ const server = http.createServer(async (req, res) => {
   sendFile(res, filePath);
 });
 
-server.listen(PORT, '0.0.0.0', ()  => {
+server.listen(PORT, '0.0.0.0', () => {
   console.log(`米哈游活动/兑换码 H5 已启动： http://localhost:${PORT}`);
   // 启动即执行一次自动更新尝试
   doUpdate().then((m) =>
