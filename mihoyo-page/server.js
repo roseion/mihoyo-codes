@@ -357,8 +357,10 @@ async function doUpdate() {
       liveCount++;
 
       // --- 联名活动（按官方账号 label 归因到正确游戏） ---
+      // 关键：无论过滤后是 0 还是 N 条，都强制覆盖 game.collabs，
+      // 否则旧数据（如 zzz 残留的 HSR 帖）会一直保留。
       const collabs = pickCollabPosts(posts, now);
-      if (collabs.length) {
+      {
         const reAssigned = collabs.map((p) => ({
           ...p,
           _assignedSlug: resolveOfficialGameSlug(p.officialLabel, slug),
@@ -375,10 +377,11 @@ async function doUpdate() {
         const localCollabs = filtered
           .filter((p) => p._assignedSlug === slug)
           .map(formatCollab);
-        if (localCollabs.length) {
+        if (localCollabs.length || (game.collabs && game.collabs.length)) {
           game.collabs = localCollabs.slice(0, 6);
           changed = true;
-          console.log(`  联名(本游戏): +${localCollabs.length} 条`);
+          if (localCollabs.length) console.log(`  联名(本游戏): +${localCollabs.length} 条`);
+          else console.log(`  联名(本游戏): 0 条（已清空旧数据）`);
         }
 
         const crossPost = filtered.filter((p) => p._assignedSlug !== slug);
@@ -389,7 +392,7 @@ async function doUpdate() {
 
       // --- 线下活动（按官方账号 label 归因，zzz 排除 HSR 帖） ---
       const events = pickOfflinePosts(posts, now);
-      if (events.length) {
+      {
         const reAssigned = events.map((p) => ({
           ...p,
           _assignedSlug: resolveOfficialGameSlug(p.officialLabel, slug),
@@ -403,10 +406,11 @@ async function doUpdate() {
         const localEvents = filtered
           .filter((p) => p._assignedSlug === slug)
           .map(formatOffline);
-        if (localEvents.length) {
+        if (localEvents.length || (game.events && game.events.length)) {
           game.events = localEvents.slice(0, 8);
           changed = true;
-          console.log(`  线下(本游戏): +${localEvents.length} 条`);
+          if (localEvents.length) console.log(`  线下(本游戏): +${localEvents.length} 条`);
+          else console.log(`  线下(本游戏): 0 条（已清空旧数据）`);
         }
         const crossEvent = filtered.filter((p) => p._assignedSlug !== slug);
         if (crossEvent.length) {
@@ -429,10 +433,11 @@ async function doUpdate() {
           });
         }
       }
-      if (codes.length) {
+      if (codes.length || (game.codes && game.codes.length)) {
         game.codes = codes.slice(0, 8);
         changed = true;
-        console.log(`  兑换码: +${codes.length} 条`);
+        if (codes.length) console.log(`  兑换码: +${codes.length} 条`);
+        else console.log(`  兑换码: 0 条（已清空旧数据）`);
       }
     } catch (e) {
       console.warn(`[${meta.name}] 抓取失败，保留上次数据: ${e.message}`);
