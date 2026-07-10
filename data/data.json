@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": "2026-07-09T13:17:40.611Z",
+    "updatedAt": "2026-07-10T06:24:01.800Z",
     "mode": "live",
     "note": "已从米游社抓取 3 款游戏（原神、崩坏：星穹铁道、绝区零）的联名/活动/兑换码数据。"
   },
@@ -34,36 +34,19 @@
         "bgImage": "assets/sr.jpg"
       },
       "codes": [],
-      "events": [
-        {
-          "postId": "76189676",
-          "title": "「尘灵游乐园」活动说明",
-          "published": "2026-06-23",
-          "url": "https://miyoushe.com/sr/article/76189676",
-          "summary": "流行风尚瞬息万变，星铁FES也迎来焕新契机。合理规划动线，巧妙布置设施，在画中世界为尘灵们建造专属游乐园吧！你的创想将成为展区优化的绝佳灵感。 ▌限时活动期 2026/06/24 12:",
-          "source": "崩坏：星穹铁道官方账号"
-        },
-        {
-          "postId": "76109402",
-          "title": "BilibiliWorld参展详情",
-          "published": "2026-06-19",
-          "url": "https://miyoushe.com/sr/article/76109402",
-          "summary": "亲爱的开拓者，帕姆今天为开拓者带来了《崩坏：星穹铁道》BilibiliWorld 2026展台详细情报！ ▌展会时间：2026年7月10日-7月12日 ▌展馆地址：上海国家会展中心",
-          "source": "崩坏：星穹铁道官方账号"
-        }
-      ],
+      "events": [],
       "collabs": [
         {
-          "postId": "76423748",
-          "title": "《崩坏：星穹铁道》×Fate[UBW]联动福利一览",
-          "published": "2026-07-03",
-          "url": "https://miyoushe.com/sr/article/76423748",
-          "summary": "一起来看看Fate[UBW]联动更新的相关福利吧~",
+          "postId": "76575367",
+          "title": "《崩坏：星穹铁道》× 芬达联动短片 | 夏日，海边，橙味汽水",
+          "published": "2026-07-10",
+          "url": "https://miyoushe.com/sr/article/76575367",
+          "summary": "浪潮吟唱着盛夏的谣曲，海风中有橙味汽水的清甜，多么不可战胜的灿烂夏日。 用上视频同款BGM，与星期日、知更鸟一起记录夏天吧~ 中文CV： 知更鸟——钱琛 / 歌：Chevy 星期日——徐翔",
           "official": true,
           "officialLabel": "崩坏：星穹铁道官方账号",
-          "viewCount": 208723,
-          "replyCount": 836,
-          "likeCount": 16218
+          "viewCount": 20630,
+          "replyCount": 428,
+          "likeCount": 3344
         },
         {
           "postId": "76461582",
@@ -73,21 +56,33 @@
           "summary": "亲爱的开拓者，《崩坏：星穹铁道》× 芬达Fanta 联名将于7月10日10:00正式上线！ 喝下这瓶芬达，快乐橙爽速速达！与知更鸟、星期日一起，开启橙爽夏日吧~ ▌帕姆小贴士 * 芬达联",
           "official": true,
           "officialLabel": "崩坏：星穹铁道官方账号",
-          "viewCount": 352016,
-          "replyCount": 1865,
-          "likeCount": 24959
+          "viewCount": 381657,
+          "replyCount": 2226,
+          "likeCount": 25338
         },
         {
-          "postId": "76422972",
-          "title": "4.4版本PV：「鸣笛于归寂之时」",
+          "postId": "76423748",
+          "title": "《崩坏：星穹铁道》×Fate[UBW]联动福利一览",
           "published": "2026-07-03",
-          "url": "https://miyoushe.com/sr/article/76422972",
-          "summary": "领航者绘出通往末日的航图。哀切的鸣笛响彻，唯有开拓之人才能寻得跨越死境的生路…… ※本视频包含部分开发中内容，实际内容请以正式上线为准 ※特殊说明：联动角色游戏内配音语言仅为日语、汉语、韩语。",
+          "url": "https://miyoushe.com/sr/article/76423748",
+          "summary": "一起来看看Fate[UBW]联动更新的相关福利吧~",
           "official": true,
           "officialLabel": "崩坏：星穹铁道官方账号",
-          "viewCount": 175852,
-          "replyCount": 1003,
-          "likeCount": 21163
+          "viewCount": 215212,
+          "replyCount": 859,
+          "likeCount": 16449
+        },
+        {
+          "postId": "76467744",
+          "title": "《崩坏：星穹铁道》× 芬达｜联名周边&联名产品展示",
+          "published": "2026-07-05",
+          "url": "https://miyoushe.com/sr/article/76467744",
+          "summary": "「气泡轻响，开启一场橙意纷达的夏天。」 羽翼掠过晴空，歌声随海风回荡。 和帕姆一同看看这份来自橙爽夏日的心意帕。 期待开拓者也在这片灿烂橙意下，收获一整个美好夏日~ ▌帕姆小贴士： *《崩",
+          "official": true,
+          "officialLabel": "崩坏：星穹铁道官方账号",
+          "viewCount": 202334,
+          "replyCount": 942,
+          "likeCount": 23877
         }
       ]
     },
