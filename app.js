@@ -219,6 +219,8 @@ async function loadData() {
 }
 
 async function manualUpdate() {
+  const key = prompt('请输入刷新密码：');
+  if (key === null) return; // 用户取消
   const btn = $('#updateBtn');
   const label = $('#updateLabel');
   const spin = $('#spinner');
@@ -226,9 +228,11 @@ async function manualUpdate() {
   label.textContent = '更新中';
   spin.hidden = false;
   try {
-    const res = await fetch(API_BASE + '/api/update', { method: 'POST' });
+    const res = await fetch(API_BASE + '/api/update?key=' + encodeURIComponent(key), { method: 'POST' });
     const json = await res.json();
-    if (json.ok) {
+    if (res.status === 401) {
+      showToast('密码错误');
+    } else if (json.ok) {
       await loadData();
       showToast(json.meta?.mode === 'live' ? '已更新最新数据' : '已刷新（沿用上次有效数据）');
     } else {
