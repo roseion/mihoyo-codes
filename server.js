@@ -13,6 +13,10 @@ const DATA_FILE = path.join(ROOT, 'data', 'data.json');
 const PUBLIC_DIR = ROOT;
 const PORT = process.env.PORT || 3000;
 
+// 手动刷新密码（公网/本地均需，防误触与滥用）。部署时在环境变量中设定；
+// 这里写入的仅为默认值，运行时以环境变量 REFRESH_KEY 为准。
+const REFRESH_KEY = process.env.REFRESH_KEY || '522529';
+
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
@@ -562,8 +566,12 @@ const server = http.createServer(async (req, res) => {
     return serveApi(res, 200, data);
   }
 
-  // API: 手动更新
+  // API: 手动更新（需密码，公网/本地均校验）
   if (pathname === '/api/update' && req.method === 'POST') {
+    const provided = (new URL(req.url, 'http://localhost')).searchParams.get('key') || req.headers['x-refresh-key'] || '';
+    if (provided !== REFRESH_KEY) {
+      return serveApi(res, 401, { ok: false, error: '密码错误' });
+    }
     try {
       const meta = await doUpdate();
       return serveApi(res, 200, { ok: true, meta });
