@@ -240,15 +240,17 @@ body {
 /* 游戏名：细体 + 大写追踪 */
 .card-game {
   font-family: "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 13px; font-weight: 600; letter-spacing: 1px;
+  font-size: 13px; font-weight: 700; letter-spacing: 1px;
   text-transform: uppercase; margin: 0 0 4px;
   color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.85), 0 0 18px rgba(0,0,0,0.5);
 }
 
-/* tagline：body-dark 灰 */
+/* tagline：body-dark 灰，但提升亮度与阴影 */
 .card-tagline {
   font: 400 14px/1.5 "Roboto", "Inter", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-  color: rgba(255,255,255,0.7); margin: 0 0 16px;
+  color: rgba(255,255,255,0.92); margin: 0 0 16px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.85), 0 0 18px rgba(0,0,0,0.5);
 }
 
 /* 兑换码块：深色毛玻璃卡片，确保在复杂背景图上可读 */
