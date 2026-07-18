@@ -58,23 +58,30 @@ function renderCodes(game) {
           if (c.expires) { const d = new Date(String(c.expires).replace(/-/g, '/')); return !isNaN(d.getTime()) && d.getTime() < Date.now(); }
           return false;
         })();
-        const reward = c.reward ? `<div class="code-reward" style="font-size:13px;color:#d7e6ff;margin:2px 0;">${escapeHtml(c.reward)}</div>` : '';
+        const badge = expired
+          ? '<span class="code-badge code-badge-expired">已失效</span>'
+          : '<span class="code-badge code-badge-valid">可兑换</span>';
+        const reward = c.reward ? `<div class="code-reward">${escapeHtml(c.reward)}</div>` : '';
         const sub = [];
         if (c.publishedAt) sub.push('发布 ' + escapeHtml(c.publishedAt));
         else if (c.published) sub.push('发布 ' + escapeHtml(c.published));
         if (c.location) sub.push('地点 ' + escapeHtml(c.location));
-        if (c.expires) {
-          if (expired) sub.push('<span style="color:#ff8585;">⚠ 已失效 · 有效期至 ' + escapeHtml(c.expires) + '</span>');
-          else sub.push('有效期至 ' + escapeHtml(c.expires));
-        }
-        const subHtml = sub.length ? `<div class="code-sub" style="font-size:12px;color:#9fb3d0;margin-top:2px;">${sub.join(' · ')}</div>` : '';
-        const note = `<div class="code-meta">${reward}${subHtml}</div>`;
+        if (c.expires) sub.push('有效期至 ' + escapeHtml(c.expires));
+        const subHtml = sub.length ? `<div class="code-sub">${sub.join(' · ')}</div>` : '';
         return `
-          <div class="code-row" style="${expired ? 'opacity:.6;' : ''}">
-            <span class="code-val" style="${expired ? 'text-decoration:line-through;opacity:.65;' : ''}">${escapeHtml(c.code)}</span>
-            <button class="code-copy" data-code="${escapeHtml(c.code)}">复制</button>
-          </div>
-          ${note}`;
+          <div class="code-item ${expired ? 'code-item-expired' : ''}">
+            <div class="code-row">
+              <span class="code-val">${escapeHtml(c.code)}</span>
+              <div class="code-actions">
+                ${badge}
+                <button class="code-copy" data-code="${escapeHtml(c.code)}">复制</button>
+              </div>
+            </div>
+            <div class="code-meta">
+              ${reward}
+              ${subHtml}
+            </div>
+          </div>`;
       })
       .join('');
   }
