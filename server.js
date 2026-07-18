@@ -190,7 +190,7 @@ async function fetchForumPosts(forumId, slug, pageSize = 10) {
     const json = await safeFetch(url);
     const posts = json?.data?.list || [];
     return posts
-      .filter((p) => p?.post?.post_status?.is_official)
+      .filter((p) => p?.post?.post_status?.is_official || ((p?.user?.certification?.type) === 1))
       .map((p) => {
         const post = p.post;
         const officialLabel = p.user?.certification?.label || '';
