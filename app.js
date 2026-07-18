@@ -49,24 +49,29 @@ function renderCodes(game) {
   const codes = game.codes || [];
   let body;
   if (!codes.length) {
-    body = `<div class="card-empty">近一周内暂无新的国服兑换码<br/>已用最近一条存档填充（见下方活动区或稍后点“更新”）</div>`;
+    body = `<div class="card-empty">近一个月内暂无新的国服兑换码</div>`;
   } else {
     body = codes
       .map((c) => {
-        const note = (() => {
-          if (c.note) return `<div class="code-meta"><span class="warn">⚠ ${escapeHtml(c.note)}</span></div>`;
-          const reward = c.reward ? `<div class="code-reward" style="font-size:13px;color:#d7e6ff;margin:2px 0;">${escapeHtml(c.reward)}</div>` : '';
-          const sub = [];
-          if (c.publishedAt) sub.push('发布 ' + escapeHtml(c.publishedAt));
-          else if (c.published) sub.push('发布 ' + escapeHtml(c.published));
-          if (c.location) sub.push('地点 ' + escapeHtml(c.location));
-          if (c.expires) sub.push('有效期至 ' + escapeHtml(c.expires));
-          const subHtml = sub.length ? `<div class="code-sub" style="font-size:12px;color:#9fb3d0;margin-top:2px;">${sub.join(' · ')}</div>` : '';
-          return `<div class="code-meta">${reward}${subHtml}</div>`;
+        const expired = (() => {
+          if (c.expired === true) return true;
+          if (c.expires) { const d = new Date(String(c.expires).replace(/-/g, '/')); return !isNaN(d.getTime()) && d.getTime() < Date.now(); }
+          return false;
         })();
+        const reward = c.reward ? `<div class="code-reward" style="font-size:13px;color:#d7e6ff;margin:2px 0;">${escapeHtml(c.reward)}</div>` : '';
+        const sub = [];
+        if (c.publishedAt) sub.push('发布 ' + escapeHtml(c.publishedAt));
+        else if (c.published) sub.push('发布 ' + escapeHtml(c.published));
+        if (c.location) sub.push('地点 ' + escapeHtml(c.location));
+        if (c.expires) {
+          if (expired) sub.push('<span style="color:#ff8585;">⚠ 已失效 · 有效期至 ' + escapeHtml(c.expires) + '</span>');
+          else sub.push('有效期至 ' + escapeHtml(c.expires));
+        }
+        const subHtml = sub.length ? `<div class="code-sub" style="font-size:12px;color:#9fb3d0;margin-top:2px;">${sub.join(' · ')}</div>` : '';
+        const note = `<div class="code-meta">${reward}${subHtml}</div>`;
         return `
-          <div class="code-row">
-            <span class="code-val">${escapeHtml(c.code)}</span>
+          <div class="code-row" style="${expired ? 'opacity:.6;' : ''}">
+            <span class="code-val" style="${expired ? 'text-decoration:line-through;opacity:.65;' : ''}">${escapeHtml(c.code)}</span>
             <button class="code-copy" data-code="${escapeHtml(c.code)}">复制</button>
           </div>
           ${note}`;
