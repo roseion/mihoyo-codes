@@ -96,7 +96,38 @@ const GAME_META = {
 // 有效期至 2026-07-19 23:59:59。其余游戏近一周内无权威源确认的在期码。
 const SEED_CODES = {
   genshin:  [],
-  sr:       [],
+  sr: [
+    {
+      code: 'JEGAZZ6YQN6L',
+      reward: '星琼×100（4.4 前瞻直播限时福利）',
+      published: '2026-07-04',
+      publishedAt: '2026-07-04（4.4 前瞻直播）',
+      location: '崩坏：星穹铁道 4.4 前瞻特别节目直播间（B站/微博/米游社）',
+      expires: '2026-07-05 23:59:59',
+      source: '星穹铁道官方前瞻总结（米游社 76423388）+ 代练通转载',
+      reliable: true,
+    },
+    {
+      code: '5XYAZG6GQ7N8',
+      reward: '星琼×100（4.4 前瞻直播限时福利）',
+      published: '2026-07-04',
+      publishedAt: '2026-07-04（4.4 前瞻直播）',
+      location: '崩坏：星穹铁道 4.4 前瞻特别节目直播间（B站/微博/米游社）',
+      expires: '2026-07-05 23:59:59',
+      source: '星穹铁道官方前瞻总结（米游社 76423388）+ 代练通转载',
+      reliable: true,
+    },
+    {
+      code: 'NXHSHG7Z96QC',
+      reward: '星琼×100（4.4 前瞻直播限时福利）',
+      published: '2026-07-04',
+      publishedAt: '2026-07-04（4.4 前瞻直播）',
+      location: '崩坏：星穹铁道 4.4 前瞻特别节目直播间（B站/微博/米游社）',
+      expires: '2026-07-05 23:59:59',
+      source: '星穹铁道官方前瞻总结（米游社 76423388）+ 代练通转载',
+      reliable: true,
+    },
+  ],
   zzz: [
     {
       code: '0729XUSHOU',
