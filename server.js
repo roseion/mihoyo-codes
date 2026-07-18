@@ -89,10 +89,26 @@ const GAME_META = {
 // 不在帖子正文纯文本中，正则自动提取不可行（实测 30 条绝区零官方帖正文 0 条含明文码）。
 // 在此维护各游戏当前可用兑换码；每日更新只刷新联名/活动，绝不在此处清空种子。
 // 字段：{ code: 'XXXXXX', reward: '说明', published: 'YYYY-MM-DD', source: '官方/手动', reliable: true }
+// 种子码须满足：①仍在兑换期限内 ②发布于近一周内（人工核验）。
+// 每条字段：code / reward / published(YYYY-MM-DD) / publishedAt(发布时间) /
+//          location(发布地点) / expires(有效期至) / source / reliable
+// 绝区零 3.1 前瞻特别节目直播码（2026-07-17 19:30），官方页与 IT之家均确认
+// 有效期至 2026-07-19 23:59:59。其余游戏近一周内无权威源确认的在期码。
 const SEED_CODES = {
   genshin:  [],
   sr:       [],
-  zzz:      [],
+  zzz: [
+    {
+      code: '0729XUSHOU',
+      reward: '菲林（3.1 前瞻特别节目直播限时福利）',
+      published: '2026-07-17',
+      publishedAt: '2026-07-17 19:30',
+      location: '绝区零 3.1 前瞻特别节目直播间（B站/微博/官网）',
+      expires: '2026-07-19 23:59:59',
+      source: '绝区零官方 + IT之家转载',
+      reliable: true,
+    },
+  ],
   wuwa:     [],
   endfield: [],
   yuhuan:   [],
