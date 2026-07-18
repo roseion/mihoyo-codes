@@ -52,6 +52,8 @@ function saveData(data) {
 // ---------- 米游社官方接口抓取（2026-07-09 实测可用） ----------
 // game_id 映射（bbs-api.miyoushe.com/searchPosts?gids=N 验证）：
 //   gids=1 → 原神  |  gids=5 → 崩坏：星穹铁道  |  gids=6 → 绝区零
+// 注意：gids 搜索接口对原神/绝区零会返回跨游戏污染内容（崩坏3 / 星铁官方帖），
+// 故正式抓取改用已实测确认的官方版块 forum_id：原神=28 | 星穹铁道=53 | 绝区零=58 （2026-07-18 验证）
 // API: https://bbs-api.miyoushe.com/post/wapi/searchPosts?gids={gids}&keyword={kw}&page_size=10
 // 关键字段: post.is_official=true 为官方账号 post.certification.type=1 为认证
 // URL格式: https://miyoushe.com/{game_slug}/article/{post_id}
@@ -81,6 +83,19 @@ const GAME_META = {
   wuwa:    { gids: null, name: '鸣潮',     slug: 'wuwa',      community: 'https://www.kurogame.com/' },
   endfield:{ gids: null, name: '终末地',   slug: 'endfield', community: 'https://ak.hypergryph.com/' },
   yuhuan:  { gids: null, name: '异环',     slug: 'yuhuan',    community: 'https://www.taptap.com/app/198030' },
+};
+
+// 兑换码为人工维护种子数据：米游社官方兑换码发布于直播画面/图片/专门兑换页/游戏内邮件，
+// 不在帖子正文纯文本中，正则自动提取不可行（实测 30 条绝区零官方帖正文 0 条含明文码）。
+// 在此维护各游戏当前可用兑换码；每日更新只刷新联名/活动，绝不在此处清空种子。
+// 字段：{ code: 'XXXXXX', reward: '说明', published: 'YYYY-MM-DD', source: '官方/手动', reliable: true }
+const SEED_CODES = {
+  genshin:  [],
+  sr:       [],
+  zzz:      [],
+  wuwa:     [],
+  endfield: [],
+  yuhuan:   [],
 };
 
 const BBS_API = 'https://bbs-api.miyoushe.com';
@@ -149,13 +164,13 @@ async function searchOfficialPosts(gids, slug, keywords, isOfficial = true) {
 const FORUM_ID_MAP = {
   1:  'ys',   // 甲板 - 原神
   4:  'ys',   // 原神另一版块
-  6:  'ys',   // 原神官方活动版
+  6:  'ys',   // 原神官方活动版（实测偶见崩坏3帖，按 slug 归原神）
   26: 'sr',   // 星穹铁道相关
-  28: 'sr',
+  28: 'ys',   // 原神官方版（2026-07-18 实测：含原神祈愿/周边官方帖）
   29: 'sr',
   34: 'sr',   // 星穹铁道生活版
-  53: 'zzz',  // 官方版（含星铁角色内容）
-  52: 'zzz',  // 绝区零版块
+  53: 'sr',   // 星穹铁道官方版（2026-07-18 实测确认）
+  58: 'zzz',  // 绝区零官方版（2026-07-18 实测确认；原映射 52/53 均非绝区零）
 };
 
 function resolveForumSlug(forum) {
@@ -299,9 +314,9 @@ async function doUpdate() {
   const crossCollabs = [];
   const crossEvents = [];
 
-  // 已知有效版块（实测）：
-  //   genshin: forum_id=6  (官方活动版)  |  sr: forum_id=53 (官方版)  |  zzz: forum_id=53 (官方版)
-  const FORUM_MAP = { genshin: 6, sr: 53, zzz: 53 };
+  // 已知有效版块（2026-07-18 实测确认）：
+  //   genshin: forum_id=28 (原神官方版)  |  sr: forum_id=53 (星穹铁道官方版)  |  zzz: forum_id=58 (绝区零官方版)
+  const FORUM_MAP = { genshin: 28, sr: 53, zzz: 58 };
   // 搜索关键词优先级
   const COLLAB_KWS = ['联名', '联动', '合作'];
   const CODE_KWS   = ['兑换码', '前瞻', '礼包'];
@@ -321,16 +336,13 @@ async function doUpdate() {
       // 策略1（sr）：官方版块（forum_id=53 直接获取）
       // 策略2（通用）：官方版块补充（兜底遗漏）
       if (slug === 'genshin' || slug === 'zzz') {
-        // 用搜索 API 查本游戏官方帖
-        const searchPosts = await searchOfficialPosts(meta.gids, meta.slug, [...COLLAB_KWS, ...CODE_KWS, '公告', '活动'], true);
-        if (searchPosts.length) {
-          posts = searchPosts;
-          console.log(`  搜索API: +${searchPosts.length} 条`);
-        } else {
-          // 兜底：官方版块
-          const forumId = FORUM_MAP[slug];
-          const forumPosts = await fetchForumPosts(forumId, meta.slug, 20);
-          if (forumPosts.length) { posts = forumPosts; console.log(`  版块兜底: +${forumPosts.length} 条`); }
+        // gids 搜索接口对原神/绝区零返回跨游戏污染内容（崩坏3 / 星铁），故改用
+        // 已实测确认的官方版块（FORUM_MAP: 原神=28 / 绝区零=58）为主源。
+        const forumId = FORUM_MAP[slug];
+        const forumPosts = await fetchForumPosts(forumId, meta.slug, 20);
+        if (forumPosts.length) {
+          posts = forumPosts;
+          console.log(`  官方版块(${forumId}): +${forumPosts.length} 条`);
         }
       } else {
         // sr：优先官方版块（forum_id=53）
@@ -422,13 +434,14 @@ async function doUpdate() {
         }
       }
 
-      // --- 兑换码（从两周内官方帖提取） ---
+      // --- 兑换码（人工维护种子：米游社帖正文无明文码，自动提取不可行） ---
+      // 自动提取仅作尽力补充；种子与自动皆空时保留已有数据，不强制清空。
       const codePosts = pickCodePosts(posts, now);
-      const codes = [];
+      const autoCodes = [];
       for (const cp of codePosts) {
         const found = extractCodes(cp.title + ' ' + cp.summary);
         for (const c of found) {
-          codes.push({
+          autoCodes.push({
             code: c,
             reward: cp.title,
             published: new Date(cp.publishedTs).toISOString().slice(0, 10),
@@ -437,11 +450,15 @@ async function doUpdate() {
           });
         }
       }
-      if (codes.length || (game.codes && game.codes.length)) {
-        game.codes = codes.slice(0, 8);
+      const seed = (data.seedCodes && data.seedCodes[slug]) || SEED_CODES[slug] || [];
+      const merged = [...seed];
+      for (const c of autoCodes) {
+        if (!merged.some((m) => m.code === c.code)) merged.push(c);
+      }
+      if (merged.length || (game.codes && game.codes.length)) {
+        game.codes = merged.slice(0, 12);
         changed = true;
-        if (codes.length) console.log(`  兑换码: +${codes.length} 条`);
-        else console.log(`  兑换码: 0 条（已清空旧数据）`);
+        if (merged.length) console.log(`  兑换码: +${merged.length} 条（种子${seed.length}/自动${autoCodes.length}）`);
       }
     } catch (e) {
       console.warn(`[${meta.name}] 抓取失败，保留上次数据: ${e.message}`);
