@@ -2,7 +2,8 @@
 const $ = (s) => document.querySelector(s);
 
 // Railway 后端地址（GitHub Pages 部署时需要跨域调用；Railway 自身部署时用相对路径）
-const RAILWAY_API = 'https://mihoyo-codes-production.up.railway.app';
+// 2026-07-18：改为自定义域名，国内可解析
+const RAILWAY_API = 'https://mihoyo-api.oldgao.com';
 
 // 是否在 Railway 上（相对路径可用）
 const isRailway = location.hostname.includes('railway.app');
