@@ -53,9 +53,17 @@ function renderCodes(game) {
   } else {
     body = codes
       .map((c) => {
-        const note = c.note
-          ? `<div class="code-meta"><span class="warn">⚠ ${escapeHtml(c.note)}</span></div>`
-          : `<div class="code-meta">${escapeHtml(c.reward || '')}${c.published ? ' · 发布 ' + escapeHtml(c.published) : ''}</div>`;
+        const note = (() => {
+          if (c.note) return `<div class="code-meta"><span class="warn">⚠ ${escapeHtml(c.note)}</span></div>`;
+          const reward = c.reward ? `<div class="code-reward" style="font-size:13px;color:#d7e6ff;margin:2px 0;">${escapeHtml(c.reward)}</div>` : '';
+          const sub = [];
+          if (c.publishedAt) sub.push('发布 ' + escapeHtml(c.publishedAt));
+          else if (c.published) sub.push('发布 ' + escapeHtml(c.published));
+          if (c.location) sub.push('地点 ' + escapeHtml(c.location));
+          if (c.expires) sub.push('有效期至 ' + escapeHtml(c.expires));
+          const subHtml = sub.length ? `<div class="code-sub" style="font-size:12px;color:#9fb3d0;margin-top:2px;">${sub.join(' · ')}</div>` : '';
+          return `<div class="code-meta">${reward}${subHtml}</div>`;
+        })();
         return `
           <div class="code-row">
             <span class="code-val">${escapeHtml(c.code)}</span>
