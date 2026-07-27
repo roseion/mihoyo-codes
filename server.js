@@ -95,8 +95,25 @@ const GAME_META = {
 // 绝区零 3.1 前瞻特别节目直播码（2026-07-17 19:30），官方页与 IT之家均确认
 // 有效期至 2026-07-19 23:59:59。其余游戏近一周内无权威源确认的在期码。
 const SEED_CODES = {
-  genshin:  [],
+  genshin:  [
+    {
+      code: 'GENSHINGIFT',
+      reward: '原石×50 + 冒险家的经验×3',
+      publishedAt: '长期有效（官方永久通用码）',
+      location: '官方永久通用码 · 每个账号限领一次',
+      source: 'HoYoverse 官方通用礼包码',
+      reliable: true,
+    },
+  ],
   sr: [
+    {
+      code: 'STARRAILGIFT',
+      reward: '星琼×100 + 漫游指南×4 + 信用点×50000',
+      publishedAt: '长期有效（官方永久通用码）',
+      location: '官方永久通用码 · 每个账号限领一次',
+      source: 'HoYoverse 官方通用礼包码',
+      reliable: true,
+    },
     {
       code: 'JEGAZZ6YQN6L',
       reward: '星琼×100（4.4 前瞻直播限时福利）',
@@ -130,6 +147,14 @@ const SEED_CODES = {
   ],
   zzz: [
     {
+      code: 'ZENLESSGIFT',
+      reward: '菲林×50 + 正式调查员记录×2 + 变频音擎电源×3 + 邦布算法模组×1',
+      publishedAt: '长期有效（官方永久通用码）',
+      location: '官方永久通用码 · 每个账号限领一次',
+      source: 'HoYoverse 官方通用礼包码',
+      reliable: true,
+    },
+    {
       code: '0729XUSHOU',
       reward: '菲林（3.1 前瞻特别节目直播限时福利）',
       published: '2026-07-17',
@@ -140,7 +165,16 @@ const SEED_CODES = {
       reliable: true,
     },
   ],
-  wuwa:     [],
+  wuwa:     [
+    {
+      code: 'WUTHERINGGIFT',
+      reward: '星声×50 + 高级共鸣药剂×2 + 中型复活吸入器×2 + 中型能量包×2 + 贝币×15000',
+      publishedAt: '长期有效（官方永久通用码）',
+      location: '官方永久通用码 · 每个账号限领一次',
+      source: '库洛游戏官方通用礼包码',
+      reliable: true,
+    },
+  ],
   endfield: [],
   yuhuan:   [],
 };
