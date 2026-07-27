@@ -585,6 +585,17 @@ async function doUpdate() {
     changed = true;
   }
 
+  // 非米游社三游戏（wuwa/endfield/yuhuan）不自动抓取，用种子数据填充兑换码
+  for (const slug of ['wuwa', 'endfield', 'yuhuan']) {
+    const game = data.games?.[slug] || (data.games[slug] = {});
+    const seed = SEED_CODES[slug] || [];
+    if (seed.length) {
+      game.codes = seed.slice(0, 12);
+      changed = true;
+      console.log(`  [${GAME_META[slug].name}] 种子兑换码: +${seed.length} 条`);
+    }
+  }
+
   // 非米游社三游戏（wuwa/endfield/yuhuan）不自动抓取，保持种子数据
   data.meta = data.meta || {};
   data.meta.updatedAt = new Date().toISOString();
