@@ -53,6 +53,17 @@ function renderCodes(game) {
     body = `<div class="card-empty">近一个月内暂无新的国服兑换码</div>`;
   } else {
     body = codes
+      .filter((c) => {
+        // 限时码过期超过 3 天后自动隐藏（数据源仍保留，便于追溯）
+        if (c.expires) {
+          const d = new Date(String(c.expires).replace(/-/g, '/'));
+          if (!isNaN(d.getTime()) && d.getTime() < Date.now()) {
+            const THREE_DAYS = 3 * 24 * 60 * 60 * 1000;
+            return (Date.now() - d.getTime()) <= THREE_DAYS;
+          }
+        }
+        return true;
+      })
       .map((c) => {
         const expired = (() => {
           if (c.expired === true) return true;
