@@ -104,6 +104,36 @@ const SEED_CODES = {
       source: 'HoYoverse 官方通用礼包码',
       reliable: true,
     },
+    {
+      code: '无神怜爱的雪国',
+      reward: '原石×100（7.0「无神怜爱的雪国」前瞻直播限时福利）',
+      published: '2026-07-31',
+      publishedAt: '2026-07-31（7.0 前瞻特别节目）',
+      location: '原神 7.0 前瞻特别节目直播间（B站/抖音/米游社）',
+      expires: '2026-08-03 12:00:00',
+      source: '原神官方前瞻回顾（ys.mihoyo.com/news/165472）+ 腾讯新闻/今日头条多家转载核验',
+      reliable: true,
+    },
+    {
+      code: '欢迎来到至冬',
+      reward: '原石×100（7.0「无神怜爱的雪国」前瞻直播限时福利）',
+      published: '2026-07-31',
+      publishedAt: '2026-07-31（7.0 前瞻特别节目）',
+      location: '原神 7.0 前瞻特别节目直播间（B站/抖音/米游社）',
+      expires: '2026-08-03 12:00:00',
+      source: '原神官方前瞻回顾（ys.mihoyo.com/news/165472）+ 腾讯新闻/今日头条多家转载核验',
+      reliable: true,
+    },
+    {
+      code: '冰中雪影奥黛塔',
+      reward: '原石×100（7.0「无神怜爱的雪国」前瞻直播限时福利）',
+      published: '2026-07-31',
+      publishedAt: '2026-07-31（7.0 前瞻特别节目）',
+      location: '原神 7.0 前瞻特别节目直播间（B站/抖音/米游社）',
+      expires: '2026-08-03 12:00:00',
+      source: '原神官方前瞻回顾（ys.mihoyo.com/news/165472）+ 腾讯新闻/今日头条多家转载核验',
+      reliable: true,
+    },
   ],
   sr: [
     {
@@ -283,6 +313,7 @@ async function fetchForumPosts(forumId, slug, pageSize = 10) {
           postId: post.post_id,
           cover: post.cover || p.cover?.url || '',
           summary: (post.content || '').replace(/\{\"insert.*?\}\}/g, '').slice(0, 150),
+          contentFull: (post.content || '').replace(/\{\"insert.*?\}\}/g, ''),
           official: true,
           officialLabel: p.user?.certification?.label || '',
           stat: p.stat || {},
@@ -333,8 +364,18 @@ function extractPostId(url) {
 
 // 尝试从文本中提取疑似兑换码
 function extractCodes(text) {
-  const matches = text.match(/[A-Z0-9]{6,18}/g) || [];
-  return [...new Set(matches)].filter((m) => /[A-Z]/.test(m) && /[0-9]/.test(m));
+  const en = (text.match(/[A-Z0-9]{6,18}/g) || [])
+    .filter((m) => /[A-Z]/.test(m) && /[0-9]/.test(m));
+  // 中文口令：仅当紧邻"口令/兑换码/礼包码/cdk/码"等字样时才视为候选，
+  // 避免正文里任意 4~12 字中文短语被误当成兑换码污染列表。
+  const cn = [];
+  const cnRe = /[一-龥]{4,12}/g;
+  let m;
+  while ((m = cnRe.exec(text)) !== null) {
+    const around = text.slice(Math.max(0, m.index - 8), m.index + m[0].length + 8);
+    if (/(口令|兑换码|礼包码|cdk|CDK|码)/.test(around)) cn.push(m[0]);
+  }
+  return [...new Set([...en, ...cn])];
 }
 
 // 统一输出格式（联名活动）
@@ -520,7 +561,7 @@ async function doUpdate() {
       const codePosts = pickCodePosts(posts, now);
       const autoCodes = [];
       for (const cp of codePosts) {
-        const found = extractCodes(cp.title + ' ' + cp.summary);
+        const found = extractCodes((cp.title || '') + ' ' + (cp.contentFull || cp.summary || ''));
         for (const c of found) {
           autoCodes.push({
             code: c,
@@ -708,16 +749,26 @@ server.listen(PORT, '0.0.0.0', () => {
   );
 });
 
-// 每日自动更新(本地时间 09:00)
+// 定时自动更新：覆盖前瞻直播常见时段（本地时间）
+// 每日 09:00 + 晚间 19:00~23:00 各跑一次，确保直播当晚放出的明文码能当天被抓到
 function scheduleDaily() {
+  const HOURS = [9, 19, 20, 21, 22, 23];
   const now = new Date();
-  const next = new Date(now);
-  next.setHours(9, 0, 0, 0);
-  if (next <= now) next.setDate(next.getDate() + 1);
+  let next = null;
+  for (const h of HOURS) {
+    const c = new Date(now);
+    c.setHours(h, 5, 0, 0);
+    if (c > now) { next = c; break; }
+  }
+  if (!next) {
+    next = new Date(now);
+    next.setDate(next.getDate() + 1);
+    next.setHours(HOURS[0], 5, 0, 0);
+  }
   const delay = next - now;
   setTimeout(async () => {
     const m = await doUpdate();
-    console.log(`[每日更新] 模式=${m.mode} | ${m.note}`);
+    console.log(`[定时更新] 模式=${m.mode} | ${m.note}`);
     scheduleDaily();
   }, delay);
 }
