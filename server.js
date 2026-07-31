@@ -349,7 +349,8 @@ function pickOfflinePosts(posts, now) {
 // 筛选"兑换码/前瞻"相关（两周内）
 function pickCodePosts(posts, now) {
   const TWO_WEEKS = 14 * 24 * 3600 * 1000;
-  const KW = ['兑换码', '前瞻', '礼包码', 'cdk', 'CDK', '码', '码：'];
+  // 不再用裸"码"做关键词（会误命中"邀请码/二维码/验证码"等），只保留明确的兑换码/前瞻/礼包码/口令。
+  const KW = ['兑换码', '前瞻', '礼包码', 'cdk', 'CDK', '口令'];
   return posts
     .filter((p) => p.title && p.publishedTs)
     .filter((p) => now - p.publishedTs <= TWO_WEEKS)
@@ -363,19 +364,13 @@ function extractPostId(url) {
 }
 
 // 尝试从文本中提取疑似兑换码
+// 说明：中文口令/前瞻码实际只出现在官方回顾长图（图片）里，帖正文无明文；
+// 文本层面的中文提取误报率极高（会抓出"本次兑换码将于"/"设置密码"/"邀请码"等），
+// 所以只保留英文码自动提取作为尽力补充；中文口令统一走人工种子 SEED_CODES。
 function extractCodes(text) {
   const en = (text.match(/[A-Z0-9]{6,18}/g) || [])
     .filter((m) => /[A-Z]/.test(m) && /[0-9]/.test(m));
-  // 中文口令：仅当紧邻"口令/兑换码/礼包码/cdk/码"等字样时才视为候选，
-  // 避免正文里任意 4~12 字中文短语被误当成兑换码污染列表。
-  const cn = [];
-  const cnRe = /[一-龥]{4,12}/g;
-  let m;
-  while ((m = cnRe.exec(text)) !== null) {
-    const around = text.slice(Math.max(0, m.index - 8), m.index + m[0].length + 8);
-    if (/(口令|兑换码|礼包码|cdk|CDK|码)/.test(around)) cn.push(m[0]);
-  }
-  return [...new Set([...en, ...cn])];
+  return [...new Set(en)];
 }
 
 // 统一输出格式（联名活动）
