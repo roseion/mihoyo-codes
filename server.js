@@ -224,6 +224,16 @@ const SEED_CODES = {
       source: '三源交叉核验一致：wuwastatus.com 直播码追踪（08-07 更新）+ allthings.how + sportsdunia；官方标注 08-09 08:59 PT，换算北京时间 08-09 23:59',
       reliable: true,
     },
+    {
+      code: 'THEANSWER',
+      reward: '星声×100 + 养成材料（3.6 前瞻通讯三码之一，三码合计 300 星声）',
+      published: '2026-08-07',
+      publishedAt: '2026-08-07（3.6「蜃云灯影，凡尘剑心」版本前瞻通讯，19:00 UTC+8）',
+      location: '鸣潮 3.6 版本前瞻通讯直播间（微博官方直播间）· 游戏内【设置】→【其他设置】→【兑换码】',
+      expires: '2026-08-09 23:59:59',
+      source: '三源独立交叉核验一致：新浪 k.sina.cn 游域研习社《鸣潮3.6前瞻》两篇（明列 HEARTOFSWORD/ETERNALFLAME/THEANSWER 共 300 星声，有效期至 8 月 9 日 23:59）+ 搜狐《3.6前瞻速览》《3.6前瞻终极汇总》（同三码，8 月 9 日 24 时失效）+ 微博「鸣潮外网搬运菌」2026-08-07 20:17 前瞻汇总实时发布；与站内已收录同批次 HEARTOFSWORD、ETERNALFLAME 有效期完全一致',
+      reliable: true,
+    },
   ],
   endfield: [
     {
