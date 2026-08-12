@@ -250,37 +250,6 @@ async function loadData() {
   render();
 }
 
-async function manualUpdate() {
-  const key = prompt('请输入刷新密码：');
-  if (key === null) return; // 用户取消
-  const btn = $('#updateBtn');
-  const label = $('#updateLabel');
-  const spin = $('#spinner');
-  btn.disabled = true;
-  label.textContent = '更新中';
-  spin.hidden = false;
-  try {
-    const res = await fetch(API_BASE + '/api/update?key=' + encodeURIComponent(key), { method: 'POST' });
-    const json = await res.json();
-    if (res.status === 401) {
-      showToast('密码错误');
-    } else if (json.ok) {
-      await loadData();
-      showToast(json.meta?.mode === 'live' ? '已更新最新数据' : '已刷新（沿用上次有效数据）');
-    } else {
-      showToast('更新失败：' + (json.error || '未知错误'));
-    }
-  } catch (e) {
-    showToast('更新请求失败');
-  } finally {
-    btn.disabled = false;
-    label.textContent = '更新';
-    spin.hidden = true;
-  }
-}
-
-$('#updateBtn').addEventListener('click', manualUpdate);
-
 // 首屏渲染 + 每 5 分钟静默刷新一次（保证打开页面始终较新）
 loadData();
 setInterval(loadData, 5 * 60 * 1000);
