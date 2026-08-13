@@ -96,6 +96,16 @@ const GAME_META = {
 // 有效期至 2026-07-19 23:59:59。其余游戏近一周内无权威源确认的在期码。
 const SEED_CODES = {
   genshin:  [
+{
+    code: 'F5F4D3B2A2',
+    reward: '科考摩托联动涂装「逃离鸭科夫」×1（《鸣潮》×《逃离鸭科夫》联动限定首尾涂装，每个 UID 限成功兑换一次）',
+    published: '2026-07-11',
+    publishedAt: '2026-07-11（官方「秧秧的梦境撤离」解谜活动谜底揭晓，坐标「先纵后横」组合得码）',
+    location: '鸣潮官方解谜活动（官方公众号 / TapTap 官方版主帖 / 官方 Facebook 同步公布谜底）· 游戏内【设置】→【其他设置】→【兑换码】',
+    expires: '2026-08-19 23:59:59',
+    source: '官方源直证 + 多源独立交叉核验：① TapTap《鸣潮》官方版主帖 moment/824726648216620110 原文「最终兑换码为：F5F4D3B2A2……该兑换码有效期持续至3.5版本结束，每个UID最多可成功兑换一次」；② 17173 新闻 content/07132026/145324421.shtml 转载官方公众号同文；③ 官方 Facebook（PTT C_Chat 转录 M.1783782480.A.E60）；④ Game8 明确标注 Expiry: August 19, 2026 (end of Version 3.5)；⑤ allthings.how「redeemable through August 19 2026」；⑥ mrguider「Added: July 11th, 2026 / Expiry: August 19, 2026」；⑦ buffbuff 到期日 2026-08-19 状态可用。3.6 版本 8/20 上线即 3.5 结束，故保守取 8/19 23:59:59',
+    reliable: true,
+  },
     {
       code: 'GENSHINGIFT',
       reward: '原石×50 + 冒险家的经验×3',
