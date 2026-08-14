@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": "2026-08-13T22:57:17+08:00",
+    "updatedAt": "2026-08-14T22:27:28+08:00",
     "mode": "seed",
     "note": "已从米游社抓取 3 款游戏（原神、崩坏：星穹铁道、绝区零）的联名/活动/兑换码数据。"
   },
@@ -33,7 +33,38 @@
         "gradient": "linear-gradient(135deg, #2b1055 0%, #4b2a8a 50%, #7597de 100%)",
         "bgImage": "assets/sr.jpg"
       },
-      "codes": [],
+      "codes": [
+        {
+          "code": "NEYSCGAWKE98",
+          "reward": "星琼×100、信用点×50000（4.5 前瞻直播限时福利）",
+          "published": "2026-08-14",
+          "publishedAt": "2026-08-14（4.5 前瞻直播）",
+          "location": "崩坏：星穹铁道 4.5「挥掷千星的筹码」前瞻特别节目直播间（B站/微博/米游社/TapTap）",
+          "expires": "2026-08-15 23:59:59",
+          "source": "星穹铁道官网前瞻回顾页 + a9vg 论坛(官方截图) + TapTap 官方论坛 + B站直播总结（四源一致）",
+          "reliable": true
+        },
+        {
+          "code": "UWZBVYTW3UBC",
+          "reward": "星琼×100、旅者的指南×5（4.5 前瞻直播限时福利）",
+          "published": "2026-08-14",
+          "publishedAt": "2026-08-14（4.5 前瞻直播）",
+          "location": "崩坏：星穹铁道 4.5「挥掷千星的筹码」前瞻特别节目直播间（B站/微博/米游社/TapTap）",
+          "expires": "2026-08-15 23:59:59",
+          "source": "星穹铁道官网前瞻回顾页 + a9vg 论坛(官方截图) + TapTap 官方论坛 + B站直播总结（四源一致）",
+          "reliable": true
+        },
+        {
+          "code": "NXYBCZTF3CAY",
+          "reward": "星琼×100、提纯以太×4（4.5 前瞻直播限时福利）",
+          "published": "2026-08-14",
+          "publishedAt": "2026-08-14（4.5 前瞻直播）",
+          "location": "崩坏：星穹铁道 4.5「挥掷千星的筹码」前瞻特别节目直播间（B站/微博/米游社/TapTap）",
+          "expires": "2026-08-15 23:59:59",
+          "source": "星穹铁道官网前瞻回顾页 + a9vg 论坛(官方截图) + TapTap 官方论坛 + B站直播总结（四源一致）",
+          "reliable": true
+        }
+      ],
       "events": [],
       "collabs": [
         {
