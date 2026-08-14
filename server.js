@@ -97,6 +97,36 @@ const GAME_META = {
 const SEED_CODES = {
   genshin:  [
 {
+    code: 'NEYSCGAWKE98',
+    reward: '星琼×100、信用点×50000（4.5 前瞻直播限时福利）',
+    published: '2026-08-14',
+    publishedAt: '2026-08-14（4.5 前瞻直播）',
+    location: '崩坏：星穹铁道 4.5「挥掷千星的筹码」前瞻特别节目直播间（B站/微博/米游社/TapTap）',
+    expires: '2026-08-15 23:59:59',
+    source: '星穹铁道官网前瞻回顾页 + a9vg 论坛(官方截图) + TapTap 官方论坛 + B站直播总结（四源一致）',
+    reliable: true,
+  },
+{
+    code: 'UWZBVYTW3UBC',
+    reward: '星琼×100、旅者的指南×5（4.5 前瞻直播限时福利）',
+    published: '2026-08-14',
+    publishedAt: '2026-08-14（4.5 前瞻直播）',
+    location: '崩坏：星穹铁道 4.5「挥掷千星的筹码」前瞻特别节目直播间（B站/微博/米游社/TapTap）',
+    expires: '2026-08-15 23:59:59',
+    source: '星穹铁道官网前瞻回顾页 + a9vg 论坛(官方截图) + TapTap 官方论坛 + B站直播总结（四源一致）',
+    reliable: true,
+  },
+{
+    code: 'NXYBCZTF3CAY',
+    reward: '星琼×100、提纯以太×4（4.5 前瞻直播限时福利）',
+    published: '2026-08-14',
+    publishedAt: '2026-08-14（4.5 前瞻直播）',
+    location: '崩坏：星穹铁道 4.5「挥掷千星的筹码」前瞻特别节目直播间（B站/微博/米游社/TapTap）',
+    expires: '2026-08-15 23:59:59',
+    source: '星穹铁道官网前瞻回顾页 + a9vg 论坛(官方截图) + TapTap 官方论坛 + B站直播总结（四源一致）',
+    reliable: true,
+  },
+{
     code: 'F5F4D3B2A2',
     reward: '科考摩托联动涂装「逃离鸭科夫」×1（《鸣潮》×《逃离鸭科夫》联动限定首尾涂装，每个 UID 限成功兑换一次）',
     published: '2026-07-11',
