@@ -356,6 +356,16 @@ const SEED_CODES = {
     },
   ],
   endfield: [
+{
+    code: 'AKENDFIELDSUB',
+    reward: 'Oroberyl×100（高级抽卡货币）—— 官方 WhatsApp / Messenger 订阅活动奖励',
+    published: '2026-08-10',
+    publishedAt: '2026-08-10 13:00（官方「WhatsApp & Messenger 订阅活动」开启）',
+    location: '订阅官方 WhatsApp / Messenger 账号后自动下发兑换码（游戏内 协议同步器→设置→平台与账号→兑换码）',
+    expires: '2026-09-09 23:59:59',
+    source: '终末地官方公告 endfield.gg「WhatsApp & Messenger Subscription Event Now Live!」（FAQ 明示兑换码 2026/09/09 23:59 UTC+8 到期，活动期 8/10 13:00–9/9 23:59，奖励 Oroberyl×100）+ Game8(expires 9/9/2026) + MEmu(Expires 9/9/2026) + Nerd\'s Chalk + All Things How + Pocket Tactics 共 6 源交叉核验一致',
+    reliable: true,
+  },
     {
       code: 'ENDFIELDRENEW',
       reward: '折金票×71600 + 相机贴纸「工业安全帽」（1.4「向渊行」相伴庆典前瞻特别节目限时福利）',
