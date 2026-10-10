@@ -486,6 +486,16 @@ const SEED_CODES = {
       source: '终末地官方前瞻公告 + TapTap 官方快讯(moment/824761872086469634) + 233乐园「向渊行」福利汇总 + Game8 1.4 Livestream Codes（官方公告注明 2026-08-30 23:59 UTC+8 失效）+ allthings.how / pockettactics 交叉核验',
       reliable: true,
     },
+    {
+      code: 'ENDFIELDSTEAM',
+      reward: '折金票×8000 + 初级认知载体×2 + 武器检查套组×2 + 特殊纪念头像框×1（1.6「丹青渡」Steam 愿望单突破 30 万里程碑纪念兑换码）',
+      published: '2026-10-10',
+      publishedAt: '2026-10-10（随 1.6「丹青渡」版本前瞻特别节目 2026/10/6 19:30 UTC+8 播出 + Steam 愿望单突破 30 万里程碑放出；Asia 服兑换窗口自 10/6 19:30 起）',
+      location: '游戏内主界面 → 右上角「三条线」菜单 → 设置 → 平台与账户 → 兑换码（须先推进主线解锁邮箱功能后领取，邮件有效期 14 天）',
+      expires: '2026-11-25 23:59:59',
+      source: '官方 endfield.gg 公告《Steam Wishlist Milestone Reached: 300,000 and Counting!》(Updated Oct 7, 2026) 明载兑换码 ENDFIELDSTEAM 及「Asia Server: Oct. 6, 2026 at 19:30 – Nov. 25, 2026 at 23:59 (UTC+8)」；巴哈姆特 home.gamer.com.tw 转载官方《明日方舟：终末地》「丹青渡」版本前瞻特别节目情报，同样列出该码与 Asia 伺服器 2026/10/6 19:30~2026/11/25 23:59 (UTC+8)；LootBar 明确「1.6 前瞻特别直播于 2026 年 10 月 6 日 19:30 (UTC+8) 播出」，命中已知前瞻日；earlygg、topuplive、43u 三源独立一致确认码与奖励。共 6 源交叉核验，UTC+8 为北京时间（国服时区）。注：此前电玩帮曾提示「锁国区」，经核系指 Steam 商店国区买不到游戏本体，非兑换码锁区，官方原文为「All Endministrators can now unlock」全服可兑。',
+      reliable: true,
+    },
   ],
   yuhuan:   [
     {
